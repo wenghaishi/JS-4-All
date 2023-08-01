@@ -12,7 +12,7 @@ function Demo() {
     setCode(newCode);
   };
   return (
-    <div className="py-10 px-16 flex flex-col items-center justify-center w-full bg-black">
+    <div className="pt-10 pb-20 px-16 flex flex-col items-center justify-center w-full bg-black">
       <h1 className="text-white text-5xl mb-16">Try it out!</h1>
       <Editor code={code} language="javascript" onChange={handleCodeChange} />
     </div>
