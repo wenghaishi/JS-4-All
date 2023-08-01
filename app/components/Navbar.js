@@ -1,9 +1,9 @@
 import Image from "next/image";
 function Navbar() {
   return (
-    <div className="h-16 z-30 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-sm bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-20">
+    <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-20">
       <h1>JS-4-all</h1>
-      <div className="flex flex-row md:visible hidden">
+      <div className="flex-row md:flex hidden">
         <input
           type="text"
           className="bg-transparent  border-gray-300 border rounded-lg mr-2 focus:outline-none p-2 text-sm h-8"
