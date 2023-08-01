@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Features from "./components/Features";
+import Demo from "./components/Demo";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-screen flex flex-col overflow-x-hidden">
       <div
         style={{ backgroundImage: "url('/hero.jpg')", height: "400px" }}
         className="flex min-h-screen bg-black flex-col items-center justify-center p-24"
@@ -31,6 +32,7 @@ export default function Home() {
         </div>
       </div>
       <Features />
+      <Demo />
     </main>
   );
 }
