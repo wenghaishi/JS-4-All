@@ -1,7 +1,12 @@
 function Hero() {
   return (
     <div
-      style={{ backgroundImage: "url('/hero.jpg')", height: "400px" }}
+      style={{
+        backgroundImage: "url('/hero.jpg')",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
       className="flex min-h-screen bg-black flex-col items-center justify-center p-24"
     >
       <div className="z-30 flex flex-col items-center justify-center lg:mt-10 p-20 rounded-xl">
@@ -12,13 +17,13 @@ function Hero() {
           Learn javascript anytime, anywhere! If you are a...
         </h2>
         <div className="flex flex-row gap-4 text-center justify-center align-middle">
-          <h2 className="font-black hover:bg-indigo-900/20 px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
             Student
           </h2>
-          <h2 className="font-black hover:bg-indigo-900/20 px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
             Aspiring developer
           </h2>
-          <h2 className="font-black hover:bg-indigo-900/20 px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
             Hobbyist
           </h2>
         </div>
