@@ -9,7 +9,7 @@ async function Code() {
       <QuestionsCategory />
       {questions.map((q) => (
         <Link
-          href='/'
+          href={`/code/${q._id}`}
           key={q._id}
           className="text-white bg-slate-800 rounded-xl w-2/3 px-6 py-4 text-4xl"
         >

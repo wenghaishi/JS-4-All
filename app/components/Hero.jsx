@@ -13,7 +13,7 @@ function Hero() {
         <h1 className="z-30 text-transparent text-8xl bg-clip-text bg-gradient-to-r from-indigo-500 to-red-500 lg:text-9xl font-black mb-10">
           JS-4-all
         </h1>
-        <h2 className=" mb-10 font-black text-lg lg:text-3xl">
+        <h2 className="mb-10 font-black text-lg lg:text-3xl">
           Learn javascript anytime, anywhere! If you are a...
         </h2>
         <div className="flex flex-row gap-4 text-center justify-center align-middle">
