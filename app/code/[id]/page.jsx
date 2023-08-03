@@ -2,7 +2,7 @@ import Editor from "@/app/components/Editor";
 
 async function page({ params: { id } }) {
   const question = await (
-    await fetch(`http://localhost:3000/api/questions/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/questions/${id}`, {
       cache: "no-store",
     })
   ).json();

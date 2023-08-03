@@ -1,4 +1,4 @@
-import getAllQuestions from "@/lib/getAllQuestions";
+import getAllQuestions from "../../lib/getAllQuestions";
 import QuestionsCategory from "../components/QuestionsCategory";
 import Link from "next/link";
 

@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 import Link from "next/link";
-import getAllQuestions from "@/lib/getAllQuestions";
+import getAllQuestions from "../../lib/getAllQuestions";
 
 async function IndexMarquee() {
 
