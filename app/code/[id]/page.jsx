@@ -1,4 +1,4 @@
-import Editor from "@/app/components/Editor";
+import Editor from "../../../app/components/Editor";
 
 async function page({ params: { id } }) {
   const question = await (
