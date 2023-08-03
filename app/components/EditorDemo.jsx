@@ -6,7 +6,7 @@ const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
 });
 
-function Editor({ code, language, onChange }) {
+function EditorDemo({ code, language, onChange }) {
   const [userCode, setUserCode] = useState("");
   const [output, setOutput] = useState("");
 
@@ -57,4 +57,4 @@ function Editor({ code, language, onChange }) {
   );
 }
 
-export default Editor;
+export default EditorDemo;

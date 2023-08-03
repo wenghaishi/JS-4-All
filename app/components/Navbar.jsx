@@ -1,10 +1,13 @@
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 
 function Navbar() {
   return (
     <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-20">
-      <Link href="/">JS-4-all</Link>
+      <Link href="/">{"<JS-4-all />"}</Link>
+      <Link href="/code">{"<Algo-questions />"}</Link>
+      <Link href="/flashcards">{"<Flashcards />"}</Link>
+
       <div className="flex-row md:flex hidden">
         <input
           type="text"
@@ -19,7 +22,9 @@ function Navbar() {
       </div>
       <div>
         <button className="mr-4">Login</button>
-        <button className="px-4 bg-red-500 py-2 rounded-lg">Get Started!</button>
+        <button className="px-4 bg-red-500 py-2 rounded-lg">
+          Get Started!
+        </button>
       </div>
     </div>
   );
