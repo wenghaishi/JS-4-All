@@ -19,14 +19,6 @@ const questionSchema = new Schema({
     type: Array,
     required: [true, "Please provide tests"],
   },
-  difficulty: {
-    type: String,
-    required: [true, "Please provide difficulty"],
-  },
-  category: {
-    type: Array,
-    required: [true, "Please provide category"]
-  }
 
   // inventoryList: {
   //   name: { type: String, required: true },

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Editor from "./Editor";
-import IndexMarquee from "./IndexMarquee";
 
 function Demo() {
   const [code, setCode] = useState(
@@ -17,7 +16,6 @@ function Demo() {
       <h1 className="text-white text-5xl mb-12">Try it out!</h1>
       <h2 className="text-white mb-12 tracking-wider text-xl w-10/12 text-center"><span className="text-2xl tracking-wider text-indigo-400">Two sum:</span> Given an array of integers <span className="text-red-400">arr</span> and an integer <span className="text-red-400">target</span>, return indices of the two numbers such that they add up to target.</h2>
       <Editor code={code} language="javascript" onChange={handleCodeChange} />
-      <IndexMarquee />
     </div>
   );
 }
