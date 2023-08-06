@@ -25,3 +25,28 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.feature-card1 {
+  transition: background-color ease-in-out 300ms
+}
+
+.feature-card1:hover {
+  background-color: #3e096a;
+}
+
+.feature-card2 {
+  transition: background-color ease-in-out 300ms
+}
+
+.feature-card2:hover {
+  background-color: #94063f;
+}
+
+.feature-card3 {
+  transition: background-color ease-in-out 300ms
+}
+
+.feature-card3:hover {
+  background-color: #0a2a79;
+}
+
