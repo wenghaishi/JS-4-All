@@ -40,7 +40,7 @@ function Editor({ code, language, onChange }) {
         width="83.33%"
         defaultLanguage="javascript"
         theme="vs-dark"
-        defaultValue={`${code}`}
+        defaultValue={`${ code}`}
         options={editorOptions}
         value={userCode}
         onChange={handleEditorChange}

@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import Demo from "./components/Demo";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import IndexMarquee from "./components/IndexMarquee";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Demo />
+      <IndexMarquee />
     </main>
   );
 }

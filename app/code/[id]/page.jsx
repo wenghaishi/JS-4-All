@@ -7,6 +7,7 @@ export default async function page( { params: { id } }) {
 
   if (!response.ok) throw new Error("failed to fetched data");
   const question = await response.json()
+  console.log(question)
 
   return (
     <div className="w-screen h-screen bg-black flex flex-col items-center pt-16">
