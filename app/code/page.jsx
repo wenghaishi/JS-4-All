@@ -3,7 +3,7 @@ import QuestionsCategory from "../components/QuestionsCategory";
 import Link from "next/link";
 
 export default async function Code() {
-  const { questions } = await getAllQuestions();
+  // const { questions } = await getAllQuestions();
   return (
     <div className="bg-black pt-16 h-screen w-full flex flex-col items-center">
       {/* <QuestionsCategory />
