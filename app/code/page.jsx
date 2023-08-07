@@ -1,4 +1,3 @@
-'use client'
 
 import getAllQuestions from "@/lib/getAllQuestions";
 import QuestionsCategory from "../components/QuestionsCategory";
