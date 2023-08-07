@@ -1,7 +1,7 @@
 import Editor from "@/app/components/Editor"
 
 async function page( { params: { id } }) {
-  const question = await (await fetch(`${process.env.API}/api/questions/${id}`, { cache: 'no-store' })).json()
+  const question = await (await fetch(`${process.env.NEXT_API}/api/questions/${id}`, { cache: 'no-store' })).json()
 
   // const contentType = response.headers.get("content-type");
   // if (contentType.includes("text/html")) {
