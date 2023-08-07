@@ -5,6 +5,6 @@ import { NextResponse } from "next/server";
 export async function GET(req, {params}) {
   const {id} = params
   await connectDB();
-  const question = await Question.findById(id).lean();
+  const question = await Question.findById(id);
   return NextResponse.json(question);
 }
