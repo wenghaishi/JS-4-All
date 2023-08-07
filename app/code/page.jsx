@@ -6,7 +6,7 @@ export default async function Code() {
   const { questions } = await getAllQuestions();
   return (
     <div className="bg-black pt-16 h-screen w-full flex flex-col items-center">
-      <QuestionsCategory />
+      {/* <QuestionsCategory />
       {questions.map((q) => (
         <Link
           href={`/code/${q._id}`}
@@ -15,7 +15,7 @@ export default async function Code() {
         >
           {q.name}
         </Link>
-      ))}
+      ))} */}
     </div>
   );
 }
