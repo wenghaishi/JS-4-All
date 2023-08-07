@@ -1,6 +1,6 @@
 export default async function getAllQuestions() {
   try {
-    const response = await fetch(`${process.env.NEXT_API}/api/questions`, { cache: 'no-store' });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/questions`, { cache: 'no-store' });
     
     if (!response.ok) {
       const errorData = await response.text(); // Log the error response content
