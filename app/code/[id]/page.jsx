@@ -1,4 +1,4 @@
-'use client'
+
 import Editor from "@/app/components/Editor"
 
 async function page( { params: { id } }) {
