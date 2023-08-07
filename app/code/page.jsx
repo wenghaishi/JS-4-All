@@ -1,10 +1,9 @@
-
 import getAllQuestions from "@/lib/getAllQuestions";
 import QuestionsCategory from "../components/QuestionsCategory";
 import Link from "next/link";
 
-async function Code() {
-  const questions = await getAllQuestions();
+export default async function Code() {
+  const { questions } = await getAllQuestions();
   return (
     <div className="bg-black pt-16 h-screen w-full flex flex-col items-center">
       <QuestionsCategory />
@@ -20,4 +19,3 @@ async function Code() {
     </div>
   );
 }
-export default Code;

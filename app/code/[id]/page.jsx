@@ -1,7 +1,7 @@
 
 import Editor from "@/app/components/Editor"
 
-async function page( { params: { id } }) {
+export default async function page( { params: { id } }) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/questions/${id}`, { cache: 'no-store' })
 
   if (!response.ok) throw new Error("failed to fetched data");
@@ -14,4 +14,3 @@ async function page( { params: { id } }) {
     </div>
   )
 }
-export default page
