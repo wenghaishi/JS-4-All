@@ -3,8 +3,9 @@ export default async function getAllQuestions() {
     const response = await fetch(`${process.env.NEXT_API}/api/questions`, { cache: 'no-store' });
     
     if (!response.ok) {
-      const errorData = await response.json(); // Try to parse error response
-      throw new Error(`Failed to fetch data. Server response: ${JSON.stringify(errorData)}`);
+      const errorData = await response.text(); // Log the error response content
+      console.error(`API error response: ${errorData}`);
+      throw new Error(`Failed to fetch data. Server response: ${errorData}`);
     }
 
     return response.json();
