@@ -11,7 +11,7 @@ async function Code() {
         <Link
           href={`/code/${q._id}`}
           key={q._id}
-          className="text-white bg-slate-800 rounded-xl w-2/3 px-6 py-4 text-4xl"
+          className="text-white bg-slate-800 rounded-xl w-2/3 px-6 py-4 mb-4 text-4xl"
         >
           {q.name}
         </Link>
