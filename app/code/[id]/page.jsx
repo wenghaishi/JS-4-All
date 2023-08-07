@@ -2,7 +2,7 @@
 import Editor from "@/app/components/Editor"
 
 async function page( { params: { id } }) {
-  const response = await fetch(`${process.env.NEXT_API}/api/questions/${id}`, { cache: 'no-store' })
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/questions/${id}`, { cache: 'no-store' })
 
   if (!response.ok) throw new Error("failed to fetched data");
   const question = await response.json()
