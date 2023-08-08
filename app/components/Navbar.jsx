@@ -1,10 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { options } from "../api/auth/[...nextauth]/options";
-import { getServerSession } from "next-auth/next";
+import { useSession, signIn, signOut } from "next-auth/react";
 
-async function Navbar() {
-  const session = await getServerSession(options);
+function Navbar() {
+  const { data: session } = useSession();
 
   return (
     <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
