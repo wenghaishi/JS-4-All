@@ -1,12 +1,13 @@
 import getAllQuestions from "@/lib/getAllQuestions";
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 import Link from "next/link";
 
 async function IndexMarquee() {
   const { questions } = await getAllQuestions();
   console.log(questions);
   return (
-    <Marquee className="text-white bg-black pb-36 pt-16">
+    // <Marquee className="text-white bg-black pb-36 pt-16">
+    <>
       {questions.map((q) => (
         <Link
           href={`/code/${q._id}`}
@@ -16,7 +17,9 @@ async function IndexMarquee() {
           {q.name}
         </Link>
       ))}
-    </Marquee>
+    </>
+
+    // </Marquee>
   );
 }
 export default IndexMarquee;
