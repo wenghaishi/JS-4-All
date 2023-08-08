@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import IndexMarquee from "./components/IndexMarquee";
 
+
+
 export default function Home() {
   return (
     <main className="w-screen flex flex-col overflow-x-hidden">
