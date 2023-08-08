@@ -27,13 +27,29 @@ async function Navbar() {
         />
       </div>
       {session ? (
-        <Image
-          src={session.user.image}
-          width={40}
-          height={40}
-          alt="Picture of the user"
-          className="rounded-full"
-        />
+        <>
+          <a href="#modal">
+            <Image
+              src={session.user.image}
+              width={40}
+              height={40}
+              alt="Picture of the user"
+              className="rounded-full"
+            />
+          </a>
+          <div id="modal">
+            <div className="modal__window">
+              <a className="modal__close" href="#"></a>
+              <div className="pb-2 border-b">{session.user.email}</div>
+              <div className="flex flex-col">
+                <Link href="/user" className="pt-3 pb-2">
+                  Profile
+                </Link>
+                <Link href="/api/auth/signout">Logout</Link>
+              </div>
+            </div>
+          </div>
+        </>
       ) : (
         <div>
           <Link href="/api/auth/signin" className="mr-4">
