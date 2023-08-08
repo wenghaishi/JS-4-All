@@ -8,10 +8,10 @@ function Features() {
           <h2 className="text-3xl mb-2">Algorithm questions</h2>
           <p>Practice data structures and algorithm questions.</p>
         </Link>
-        <div className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card2">
+        <Link href="/flashcards" className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card2">
           <h2 className="text-3xl mb-2">Flashcards MCQ</h2>
           <p>Test your theory knowledge.</p>
-        </div>
+        </Link>
         <div className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card3">
           <h2 className="text-3xl mb-2">Lessons</h2>
           <p>Quick lessons on javascript</p>
