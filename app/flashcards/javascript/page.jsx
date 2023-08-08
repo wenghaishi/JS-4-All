@@ -22,7 +22,7 @@ function Page() {
     ) {
       event.currentTarget.style.backgroundColor = "#009E60";
     } else {
-      event.currentTarget.style.backgroundColor = "#f94449";
+      event.currentTarget.style.backgroundColor = "#D70040	";
     }
   };
 
@@ -44,7 +44,7 @@ function Page() {
           ))}
         </>
       ) : (
-        <p>Loading flashcards...</p>
+        <p className="text-2xl">Loading flashcards...</p>
       )}
     </div>
   );
