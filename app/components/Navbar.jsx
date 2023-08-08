@@ -21,7 +21,7 @@ function Navbar() {
         />
       </div>
       <div>
-        <button className="mr-4">Login</button>
+        <Link href="/api/auth/signin" className="mr-4">Login</Link>
         <button className="px-4 bg-red-500 py-2 rounded-lg">Get Started!</button>
       </div>
     </div>
