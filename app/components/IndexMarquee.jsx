@@ -2,8 +2,8 @@ import getAllQuestions from "@/lib/getAllQuestions";
 // import Marquee from "react-fast-marquee";
 import Link from "next/link";
 
-async function IndexMarquee() {
-  const { questions } = await getAllQuestions();
+export default async function IndexMarquee() {
+  const questions  = await getAllQuestions();
   console.log(questions);
   return (
     // <Marquee className="text-white bg-black pb-36 pt-16">
@@ -22,4 +22,3 @@ async function IndexMarquee() {
     // </Marquee>
   );
 }
-export default IndexMarquee;
