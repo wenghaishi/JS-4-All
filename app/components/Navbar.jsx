@@ -46,7 +46,7 @@ function Navbar() {
                 <Link href="/user" className="pt-3 pb-2">
                   Profile
                 </Link>
-                <Link href="/api/auth/signout">Logout</Link>
+                <div onClick={() => signOut()} className="cursor-pointer">Logout</div>
               </div>
             </div>
           </div>
