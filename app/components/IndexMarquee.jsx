@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default async function IndexMarquee() {
   const questions = await getAllQuestions();
-  console.log(questions);
   return (
     <Marquee className="text-white bg-black pb-36 pt-16">
       {questions.map((q) => (
