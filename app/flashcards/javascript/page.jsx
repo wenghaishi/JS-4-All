@@ -27,7 +27,7 @@ function Page() {
   };
 
   return (
-    <div className="bg-black pt-16 h-screen text-white flex flex-col items-center justify-center">
+    <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
           <h1 className="text-white text-xl tracking-wider my-10">

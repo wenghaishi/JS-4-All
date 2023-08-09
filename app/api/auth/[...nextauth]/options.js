@@ -13,7 +13,7 @@ export const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     CredentialsProvider({
-      name: "Credentials",
+      name: "credentials",
       credentials: {
         username: {
           label: "Username:",
@@ -30,10 +30,10 @@ export const options = {
         // This is where you need to retrieve user data
         // to verify with credentials
         // Docs: https://next-auth.js.org/configuration/providers/credentials
-        const user = { id: "42", name: "Dave", password: "nextauth" };
+        const user = { id: "42", email: "test", password: "test" };
 
         if (
-          credentials?.username === user.name &&
+          credentials?.email === user.email &&
           credentials?.password === user.password
         ) {
           return user;
@@ -44,7 +44,7 @@ export const options = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  theme: 'dark',
+
   pages: {
     signIn: "/auth/signIn"
   }

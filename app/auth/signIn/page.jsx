@@ -1,9 +1,22 @@
 "use client";
+import { useState } from "react";
 import { getProviders, signIn } from "next-auth/react";
+import Link from "next/link";
 
-function page() {
+function UserSignin() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
-  const signUpMsg = "Don't have an account? Sign up"
+  const handleLogIn = async(e) => {
+    e.preventDefault();
+    signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+  };
+
+  const signUpMsg = "Don't have an account? Sign up";
   const googleSignin = () => {
     signIn("google", { callbackUrl: `${process.env.NEXT_PUBLIC_API_URL}` });
   };
@@ -32,27 +45,32 @@ function page() {
           <span className="line-text">Or continue with</span>
         </div>
 
-        <form action="" className="flex flex-col w-full">
+        <form action="" onSubmit={handleLogIn} className="flex flex-col w-full">
           <label htmlFor="" className="flex flex-col">
             Email:
             <input
               type="text"
               className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </label>
           <label htmlFor="" className="flex flex-col">
             Password:
-            <input className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none" />
+            <input
+              className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </label>
           <button className="text-sm mt-2 text-gray-400">
             Forgot your password?
           </button>
-          <button className="px-32 py-2 bg-indigo-950 rounded-md border border-neutral-50/20 mt-4">
+          <button
+            type="submit"
+            className="px-32 py-2 bg-indigo-950 rounded-md border border-neutral-50/20 mt-4"
+          >
             Sign in
           </button>
-          <button className="text-sm mt-4 text-gray-400">
-          {signUpMsg}
-          </button>
+          <Link href="/auth/signUp" className="text-sm mt-4 text-center text-gray-400">{signUpMsg}</Link>
         </form>
       </div>
       <div className="w-full fixed bottom-0 z-10 h-16 flex flex-row items-center justify-center bg-black border-t border-neutral-100/20">
@@ -63,4 +81,4 @@ function page() {
     </div>
   );
 }
-export default page;
+export default UserSignin;

@@ -65,9 +65,9 @@ function Navbar() {
         <div>
           <Link href='/auth/signIn' className="mr-4">Sign in</Link>
 
-          <button className="px-4 bg-red-500 py-2 rounded-lg">
+          <Link href="/auth/signUp" className="px-4 bg-red-500 py-2 rounded-lg">
             Get Started!
-          </button>
+          </Link>
         </div>
       )}
     </div>
