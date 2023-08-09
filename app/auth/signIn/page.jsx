@@ -66,7 +66,7 @@ function UserSignin() {
           </button>
           <button
             type="submit"
-            className="px-32 py-2 bg-indigo-950 rounded-md border border-neutral-50/20 mt-4"
+            className="px-32 py-2 bg-indigo-950 hover:bg-indigo-900 rounded-md border border-neutral-50/20 mt-4"
           >
             Sign in
           </button>

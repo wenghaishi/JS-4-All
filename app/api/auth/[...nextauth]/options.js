@@ -1,6 +1,9 @@
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import connectDB from "@/lib/mongodb";
+import User from "@/models/User";
+import { NextResponse } from "next/server";
 
 export const options = {
   providers: [
@@ -30,8 +33,10 @@ export const options = {
         // This is where you need to retrieve user data
         // to verify with credentials
         // Docs: https://next-auth.js.org/configuration/providers/credentials
-        const user = { id: "42", email: "test", password: "test" };
 
+        // const user = { id: "42", email: "test", password: "test" };
+        await connectDB();
+        const user = await User.findOne({ email: credentials.email });
         if (
           credentials?.email === user.email &&
           credentials?.password === user.password
@@ -46,6 +51,6 @@ export const options = {
   secret: process.env.NEXTAUTH_SECRET,
 
   pages: {
-    signIn: "/auth/signIn"
-  }
+    signIn: "/auth/signIn",
+  },
 };
