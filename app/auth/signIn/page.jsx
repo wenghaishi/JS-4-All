@@ -12,7 +12,8 @@ function UserSignin() {
     signIn("credentials", {
       email,
       password,
-      redirect: false,
+      // redirect: "/",
+      callbackUrl: "/"
     });
   };
 
@@ -54,9 +55,10 @@ function UserSignin() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-          <label htmlFor="" className="flex flex-col">
+          <label htmlFor="" className="flex flex-col" >
             Password:
             <input
+            type="password"
               className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"
               onChange={(e) => setPassword(e.target.value)}
             />
