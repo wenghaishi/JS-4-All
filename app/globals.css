@@ -91,7 +91,7 @@ body {
 
 .modal__window {
   position: relative;
-  background-color: rgb(50, 30, 81);
+  background-color: rgb(49, 47, 52);
   padding: 2em 2em;
   border-radius: 5px;
 
@@ -111,4 +111,17 @@ body {
 #modal:not(:target) {
   visibility: hidden;
   opacity: 0;
+}
+
+.line {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #464545; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+} 
+
+.line-text { 
+   background:black; 
+   padding:0 10px; 
 }

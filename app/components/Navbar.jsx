@@ -7,6 +7,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 function Navbar() {
   const { data: session } = useSession();
 
+
   return (
     <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
       <div className="flex flex-row gap-10">
@@ -46,16 +47,24 @@ function Navbar() {
                 <Link href="/user" className="pt-3 pb-2">
                   Profile
                 </Link>
-                <div onClick={() => signOut()} className="cursor-pointer">Logout</div>
+                <div
+                  onClick={() =>
+                    signOut({
+                      callbackUrl: `/`,
+                    })
+                  }
+                  className="cursor-pointer"
+                >
+                  Logout
+                </div>
               </div>
             </div>
           </div>
         </>
       ) : (
         <div>
-          <Link href="/api/auth/signin" className="mr-4">
-            Login
-          </Link>
+          <Link href='/auth/signIn' className="mr-4">Sign in</Link>
+
           <button className="px-4 bg-red-500 py-2 rounded-lg">
             Get Started!
           </button>
