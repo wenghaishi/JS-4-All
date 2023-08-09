@@ -1,13 +1,13 @@
 "use client";
 import { getProviders, signIn } from "next-auth/react";
-import Link from "next/link";
+
 function page() {
   const googleSignin = () => {
-    signIn("google", { callbackUrl: "http://localhost:3000/" });
+    signIn("google", { callbackUrl: `${process.env.NEXT_PUBLIC_API_URL}` });
   };
 
   const githubSignin = () => {
-    signIn("github", { callbackUrl: "http://localhost:3000/" });
+    signIn("github", { callbackUrl: `${process.env.NEXT_PUBLIC_API_URL}` });
   };
 
   return (
@@ -33,21 +33,32 @@ function page() {
         <form action="" className="flex flex-col w-full">
           <label htmlFor="" className="flex flex-col">
             Email:
-            <input type="text" className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"/>
+            <input
+              type="text"
+              className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"
+            />
           </label>
           <label htmlFor="" className="flex flex-col">
             Password:
-            <input className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none"/>
+            <input className="bg-gray-800 my-3 p-2 rounded-md h-10 focus:outline-none" />
           </label>
-          <button className="text-sm mt-2 text-gray-400">Forgot your password?</button>
-          <button className="px-32 py-2 bg-indigo-950 rounded-md border border-neutral-50/20 mt-4">Sign in</button>
-          <button className="text-sm mt-4 text-gray-400"> Don't have an account? Sign up</button>
+          <button className="text-sm mt-2 text-gray-400">
+            Forgot your password?
+          </button>
+          <button className="px-32 py-2 bg-indigo-950 rounded-md border border-neutral-50/20 mt-4">
+            Sign in
+          </button>
+          <button className="text-sm mt-4 text-gray-400">
+            {" "}
+            Don't have an account? Sign up
+          </button>
         </form>
-        
       </div>
       <div className="w-full fixed bottom-0 z-10 h-16 flex flex-row items-center justify-center bg-black border-t border-neutral-100/20">
-      <h2 className="text-slate-400 italic">Building patiently... JS-4-all</h2>
-    </div>
+        <h2 className="text-slate-400 italic">
+          Building patiently... JS-4-all
+        </h2>
+      </div>
     </div>
   );
 }
