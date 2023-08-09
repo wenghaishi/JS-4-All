@@ -71,47 +71,8 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 350px;
 }
 
-/* modal */
-
-#modal {
-  position: fixed;
-  top: 139px;
-  right: 83.5px;
-  height: 10px;
-  width: 200px;
-  background-color: rgba(0,0,0,.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.modal__window {
-  position: relative;
-  background-color: rgb(49, 47, 52);
-  padding: 2em 2em;
-  border-radius: 5px;
-
-}
-
-.modal__close {
-  position: absolute;
-  top: -50.5px;
-  right: -14px;
-  height: 42px;
-  width: 42px;
-  border-radius: 9999px;
-  background-color: transparent;
-
-}
-
-#modal:not(:target) {
-  visibility: hidden;
-  opacity: 0;
-}
 
 .line {
   width: 100%; 

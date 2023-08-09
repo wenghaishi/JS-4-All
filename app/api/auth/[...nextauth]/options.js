@@ -43,7 +43,7 @@ export const options = {
         ) {
           return user;
         } else {
-          return null;
+          return { message: "Invalid email or password"};
         }
       },
     }),
