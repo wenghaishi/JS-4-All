@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className="overflow-x-hidden">
       <body className={roboto.className}>
         <Providers>
-          <Navbar />
+
+            <Navbar />
+
           {children}
           <Footer />
         </Providers>

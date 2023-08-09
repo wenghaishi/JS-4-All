@@ -2,11 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 function Navbar() {
   const { data: session } = useSession();
-
+  const [toggleModal, setToggleModal] = useState(false);
+  const handleToggleModal = () => {
+    setToggleModal((prev) => !prev);
+  };
 
   return (
     <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
@@ -30,40 +34,36 @@ function Navbar() {
       </div>
       {session ? (
         <>
-          <a href="#modal">
-            <Image
-              src={session.user.image}
-              width={40}
-              height={40}
-              alt="Picture of the user"
-              className="rounded-full"
-            />
-          </a>
-          <div id="modal">
-            <div className="modal__window">
-              <a className="modal__close" href="#"></a>
-              <div className="pb-2 border-b">{session.user.email}</div>
-              <div className="flex flex-col">
-                <Link href="/user" className="pt-3 pb-2">
-                  Profile
-                </Link>
-                <div
-                  onClick={() =>
-                    signOut({
-                      callbackUrl: `/`,
-                    })
-                  }
-                  className="cursor-pointer"
-                >
+          <Image
+            onClick={handleToggleModal}
+            src={session.user.image}
+            width={40}
+            height={40}
+            alt="Picture of the user"
+            className="rounded-full cursor-pointer"
+          />
+          {toggleModal && (
+            <>
+              <div className="fixed bg-gray-700 right-14 top-16 z-10 rounded-lg p-6 flex flex-col">
+                <h1 className="border-b border-neutral-50/50 pb-2">
+                  {session.user.email}
+                </h1>
+                <button className="text-left mt-2" onClick={() => signOut()}>
                   Logout
-                </div>
+                </button>
               </div>
-            </div>
-          </div>
+              <div
+                className="fixed w-screen h-screen top-0 right-0 bg-transparent"
+                onClick={handleToggleModal}
+              ></div>
+            </>
+          )}
         </>
       ) : (
         <div>
-          <Link href='/auth/signIn' className="mr-4">Sign in</Link>
+          <Link href="/auth/signIn" className="mr-4">
+            Sign in
+          </Link>
 
           <Link href="/auth/signUp" className="px-4 bg-red-500 py-2 rounded-lg">
             Get Started!
