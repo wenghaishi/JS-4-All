@@ -11,7 +11,7 @@ function UserSignin() {
   const handleLogIn = async (e) => {
     e.preventDefault();
     settIsLoading(true);
-    signIn("credentials", {
+    await signIn("credentials", {
       email,
       password,
       callbackUrl: "/",
