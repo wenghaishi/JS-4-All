@@ -2,6 +2,8 @@
 import { getProviders, signIn } from "next-auth/react";
 
 function page() {
+
+  const signUpMsg = "Don't have an account? Sign up"
   const googleSignin = () => {
     signIn("google", { callbackUrl: `${process.env.NEXT_PUBLIC_API_URL}` });
   };
@@ -49,8 +51,7 @@ function page() {
             Sign in
           </button>
           <button className="text-sm mt-4 text-gray-400">
-            {" "}
-            Don't have an account? Sign up
+          {signUpMsg}
           </button>
         </form>
       </div>
