@@ -4,8 +4,11 @@ import getAllFlashcards from "@/lib/getAllFlashcards";
 
 function Page() {
   const [flashcards, setFlashcards] = useState([]);
+  const [counter, setCounter] = useState();
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const key = [0, 1, 2, 3];
 
+  // fetch all flashcard questions
   useEffect(() => {
     const fetchData = async () => {
       const jsFlashcards = await getAllFlashcards();
@@ -15,14 +18,26 @@ function Page() {
     fetchData();
   }, []);
 
+
+  // handle user choice, flash red if wrong, green if correct
   const handleSelect = (event) => {
+    const originalBackgroundColor = event.currentTarget.style.backgroundColor;
+    const selectedElement = event.currentTarget;
+
     if (
-      event.currentTarget.innerHTML ==
-      flashcards[0].options[flashcards[0].answer]
+      selectedElement.innerHTML ===
+      flashcards[currentQuestion].options[flashcards[currentQuestion].answer]
     ) {
-      event.currentTarget.style.backgroundColor = "#009E60";
+      selectedElement.style.backgroundColor = "#009E60";
+      setTimeout(() => {
+        selectedElement.style.backgroundColor = originalBackgroundColor;
+        setCurrentQuestion((prev) => prev + 1);
+      }, 250);
     } else {
-      event.currentTarget.style.backgroundColor = "#D70040	";
+      selectedElement.style.backgroundColor = "#D70040";
+      setTimeout(() => {
+        selectedElement.style.backgroundColor = originalBackgroundColor;
+      }, 250);
     }
   };
 
@@ -30,21 +45,21 @@ function Page() {
     <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
-          <h1 className="text-white text-xl tracking-wider my-10">
-            {flashcards[0].description}
+          <h1 className="text-white text-2xl tracking-wider my-10">
+            {flashcards[currentQuestion].description}
           </h1>
-          {flashcards[0].options.map((option, index) => (
+          {flashcards[currentQuestion].options.map((option, index) => (
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white border text-xl border-neutral-50/30 w-8/12 text-center rounded-xl mb-10 py-10`}
+              className={`text-white border text-xl border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
             >
               {option}
             </div>
           ))}
         </>
       ) : (
-        <p className="text-2xl">Loading flashcards...</p>
+        <p className="text-2xl mt-60">Loading flashcards...</p>
       )}
     </div>
   );
