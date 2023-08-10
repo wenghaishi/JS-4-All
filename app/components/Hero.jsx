@@ -17,13 +17,13 @@ function Hero() {
           Learn javascript anytime, anywhere! If you are a...
         </h2>
         <div className="flex flex-row gap-4 text-center justify-center align-middle">
-          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 rounded-2xl text-white bg-indigo-900">
             Student
           </h2>
-          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 text-white bg-indigo-900 rounded-2xl">
             Aspiring developer
           </h2>
-          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 border border-black/20 rounded-2xl">
+          <h2 className="font-black px-6 py-2 md:px-10 md:py-6 text-white bg-indigo-900 rounded-2xl">
             Hobbyist
           </h2>
         </div>
