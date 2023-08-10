@@ -12,7 +12,7 @@ export default async function Code() {
         <Link
           href={`/code/${q._id}`}
           key={q._id}
-          className="text-white bg-slate-800 rounded-xl w-2/3 px-6 py-4 mb-4 text-2xl flex flex-row justify-between hover:bg-slate-700"
+          className="text-white bg-slate-900 rounded-xl w-2/3 px-6 py-4 mb-4 text-2xl flex flex-row justify-between hover:bg-slate-800"
         >
           <h1>{q.name}</h1>
           <h1

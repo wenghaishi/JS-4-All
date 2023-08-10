@@ -6,9 +6,21 @@ const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
 });
 
-function Editor({ code, language, onChange }) {
+function Editor({ code, description, language, onChange }) {
   const [userCode, setUserCode] = useState("");
   const [output, setOutput] = useState("");
+
+  const parts = description.split(/:(\w+)/);
+  const styledParts = parts.map((part, index) => {
+    if (index % 2 === 1) {
+      return (
+        <span className="text-green-400 italic" key={index}>
+          {part}
+        </span>
+      );
+    }
+    return part;
+  });
 
   const editorOptions = {
     selectOnLineNumbers: true,
@@ -35,17 +47,23 @@ function Editor({ code, language, onChange }) {
 
   return (
     <>
-      <CodeEditor
-        height="60vh"
-        width="83.33%"
-        defaultLanguage="javascript"
-        theme="vs-dark"
-        defaultValue={`${ code}`}
-        options={editorOptions}
-        value={userCode}
-        onChange={handleEditorChange}
-      />
-      <div className="flex flex-row items-center justify-between mt-3 w-10/12">
+      <div className="w-11/12 flex flex-row text-white">
+        <h1 className="w-1/3 tracking-wide p-6 mr-2 border border-neutral-50/20 text-md">
+          {styledParts}
+        </h1>
+        <CodeEditor
+          height="70vh"
+          width="83.33%"
+          defaultLanguage="javascript"
+          theme="vs-dark"
+          defaultValue={`${code}`}
+          options={editorOptions}
+          value={userCode}
+          onChange={handleEditorChange}
+        />
+      </div>
+
+      <div className="flex flex-row items-center justify-between mt-2 w-11/12">
         <h3 className="border border-neutral-50/20 w-full mr-3 tracking-widest px-6 py-4 text-slate-100">
           Output: {output && output}
         </h3>

@@ -4,9 +4,7 @@ import getAllFlashcards from "@/lib/getAllFlashcards";
 
 function Page() {
   const [flashcards, setFlashcards] = useState([]);
-  const [counter, setCounter] = useState();
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const key = [0, 1, 2, 3];
 
   // fetch all flashcard questions
   useEffect(() => {
@@ -32,12 +30,12 @@ function Page() {
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
         setCurrentQuestion((prev) => prev + 1);
-      }, 250);
+      }, 300);
     } else {
       selectedElement.style.backgroundColor = "#D70040";
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
-      }, 250);
+      }, 300);
     }
   };
 
@@ -52,7 +50,7 @@ function Page() {
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white border text-xl bg-slate-800 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
+              className={`text-white border text-xl hover:cursor-pointer bg-slate-900 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
             >
               {option}
             </div>

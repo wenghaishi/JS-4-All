@@ -6,15 +6,15 @@ function Features() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-evenly w-full mt-10">
         <Link href="/code" className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card1">
           <h2 className="text-3xl mb-2">Algorithm questions</h2>
-          <p>Practice data structures and algorithm questions.</p>
+          <p>Practice leetcode style questions.</p>
         </Link>
         <Link href="/flashcards" className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card2">
           <h2 className="text-3xl mb-2">Flashcards MCQ</h2>
           <p>Test your theory knowledge.</p>
         </Link>
         <div className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card3">
-          <h2 className="text-3xl mb-2">Lessons</h2>
-          <p>Quick lessons on javascript</p>
+          <h2 className="text-3xl mb-2">Challenges</h2>
+          <p>Small javascript challenges</p>
         </div>
       </div>
     </div>
