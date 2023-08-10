@@ -11,7 +11,7 @@ function Page() {
   // fetch all flashcard questions
   useEffect(() => {
     const fetchData = async () => {
-      const jsFlashcards = await getAllFlashcards();
+      const jsFlashcards = await getAllFlashcards("javascript");
       console.log(jsFlashcards.answer);
       setFlashcards(jsFlashcards);
     };
@@ -52,7 +52,7 @@ function Page() {
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white border text-xl border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
+              className={`text-white border text-xl bg-slate-800 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
             >
               {option}
             </div>
