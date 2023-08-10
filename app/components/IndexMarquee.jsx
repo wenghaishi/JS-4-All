@@ -10,7 +10,7 @@ export default async function IndexMarquee() {
         <Link
           href={`/code/${q._id}`}
           key={q._id}
-          className="text-white border border-neutral-50/30 px-20 py-16 mx-10 rounded-2xl"
+          className="text-white border feature-card1 border-neutral-50/30 px-20 py-16 mx-10 rounded-2xl"
         >
           {q.name}
         </Link>

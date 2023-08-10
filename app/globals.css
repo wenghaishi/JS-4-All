@@ -50,6 +50,14 @@ body {
   background-color: #0a2a79;
 }
 
+.feature-card4 {
+  transition: background-color ease-in-out 300ms
+}
+
+.feature-card4:hover {
+  background-color: #137808;
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);

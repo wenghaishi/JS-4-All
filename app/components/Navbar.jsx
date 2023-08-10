@@ -16,7 +16,7 @@ function Navbar() {
     <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
       <div className="flex flex-row gap-10">
         <Link href="/">JS-4-all</Link>
-        <Link href="/code">algo-questions</Link>
+        <Link href="/code">Algo-questions</Link>
         <Link href="/flashcards">Flashcards</Link>
       </div>
 

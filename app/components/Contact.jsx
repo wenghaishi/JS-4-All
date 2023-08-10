@@ -8,7 +8,7 @@ function Contact() {
 
   return (
     <div className="w-full bg-black text-white flex flex-col items-center mt-20 mb-28">
-      <h1 className="text-2xl mb-4"> Leave us a Message</h1>
+      <h1 className="text-2xl mb-4"> Questions? Leave us a Message</h1>
       <form action="" onSubmit={handleSubmit} className="flex flex-col px-20 w-4/6">
         <label htmlFor="" className="flex flex-col mb-4">
           Email: 
