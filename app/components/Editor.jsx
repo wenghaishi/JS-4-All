@@ -83,10 +83,10 @@ function Editor({ code, description, language, onChange, test }) {
           Output: {output && output}
           {correct !== undefined && (
             <div className="flex flex-row">
-              <p className={`text-${correct ? "green" : "red"}-500 mr-6`}>
+              <p className={`${correct ? "text-green-500" : "text-red-500"} mr-6`}>
                 {correct ? "Test passed" : "Test failed"}
               </p>
-              <p>Answer: {test}</p>
+              <p>Answer: {test[0]}</p>
             </div>
           )}
         </h3>
