@@ -6,10 +6,12 @@ const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
 });
 
-function Editor({ code, description, language, onChange }) {
+function Editor({ code, description, language, onChange, test }) {
   const [userCode, setUserCode] = useState("");
   const [output, setOutput] = useState("");
+  const [correct, setCorrect] = useState();
 
+  // highlight certain words
   const parts = description.split(/:(\w+)/);
   const styledParts = parts.map((part, index) => {
     if (index % 2 === 1) {
@@ -32,13 +34,26 @@ function Editor({ code, description, language, onChange }) {
     setUserCode(value);
   };
 
+  // run user code
   const runCode = () => {
     try {
       let evaluatedCode = eval(userCode); // Evaluate the user's code
       if (Array.isArray(evaluatedCode)) {
         evaluatedCode = "[" + evaluatedCode.join(", ") + "]";
         evaluatedCode = evaluatedCode.replace(" ", "");
+        if (JSON.stringify(evaluatedCode) === JSON.stringify(test[0])) {
+          setCorrect(true);
+        } else {
+          setCorrect(false);
+        }
       }
+
+      if (JSON.stringify(evaluatedCode) === JSON.stringify(test[0])) {
+        setCorrect(true);
+      } else {
+        setCorrect(false);
+      }
+
       setOutput(evaluatedCode);
     } catch (error) {
       console.error(error);
@@ -64,8 +79,16 @@ function Editor({ code, description, language, onChange }) {
       </div>
 
       <div className="flex flex-row items-center justify-between mt-2 w-11/12">
-        <h3 className="border border-neutral-50/20 w-full mr-3 tracking-widest px-6 py-4 text-slate-100">
+        <h3 className="border flex flex-row justify-between border-neutral-50/20 w-full mr-3 tracking-widest px-6 py-4 text-slate-100">
           Output: {output && output}
+          {correct !== undefined && (
+            <div className="flex flex-row">
+              <p className={`text-${correct ? "green" : "red"}-500 mr-6`}>
+                {correct ? "Test passed" : "Test failed"}
+              </p>
+              <p>Answer: {test}</p>
+            </div>
+          )}
         </h3>
         <button onClick={runCode} className="bg-white px-16 py-4 rounded-lg">
           Run
