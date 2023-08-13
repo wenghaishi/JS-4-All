@@ -50,6 +50,24 @@ export const options = {
   ],
   secret: process.env.NEXTAUTH_SECRET,
 
+  callbacks: {
+    async signIn ({user, account}) {
+      console.log(user)
+      console.log(account)
+
+      if (account.provider === 'google') {
+        try {
+          await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
+            
+          })
+        } catch (error) {
+          
+        }
+      }
+      return user
+    }
+  },
+
   pages: {
     signIn: "/auth/signIn",
   },

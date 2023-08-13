@@ -43,7 +43,7 @@ function Page() {
     <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
-          <h1 className="text-white text-2xl tracking-wider my-10">
+          <h1 className="text-white text-2xl tracking-wide my-10 lg:mx-16 mx-10">
             {flashcards[currentQuestion].description}
           </h1>
           {flashcards[currentQuestion].options.map((option, index) => (
