@@ -44,7 +44,7 @@ function Page() {
     <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
-          <h1 className="text-white text-2xl tracking-wide my-10 lg:mx-16 mx-10">
+          <h1 className="text-white sm:text-2xl text-lg tracking-wide my-10 lg:mx-16 mx-4">
             {flashcards[currentQuestion].description}
           </h1>
           {flashcards[currentQuestion].image && (
@@ -61,7 +61,7 @@ function Page() {
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
+              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
             >
               {option}
             </div>

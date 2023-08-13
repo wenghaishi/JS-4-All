@@ -46,7 +46,7 @@ function Page() {
     <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
-          <h1 className="text-white sm:text-2xl tracking-wider mx-6 my-10">
+          <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">
             {flashcards[currentQuestion].description}
           </h1>
           {flashcards[currentQuestion].image && (
