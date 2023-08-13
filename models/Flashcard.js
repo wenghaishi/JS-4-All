@@ -11,6 +11,9 @@ const flashcardSchema = new Schema({
     type: String,
     required: [true, "Please provide description"],
   },
+  image: {
+    type: String,
+  },
   options: {
     type: Array,
     required: [true, "Please provide tests"],

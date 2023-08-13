@@ -43,7 +43,7 @@ export const options = {
         ) {
           return user;
         } else {
-          return { message: "Invalid email or password"};
+          return { message: "Invalid email or password" };
         }
       },
     }),
@@ -51,21 +51,41 @@ export const options = {
   secret: process.env.NEXTAUTH_SECRET,
 
   callbacks: {
-    async signIn ({user, account}) {
-      console.log(user)
-      console.log(account)
-
-      if (account.provider === 'google') {
+    async signIn({ user, account }) {
+      // console.log(user);
+      // console.log(account);
+      const { name, email } = user;
+      if (account.provider === "google") {
         try {
-          await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
-            
-          })
-        } catch (error) {
-          
-        }
+          await connectDB();
+          const userExists = await User.findOne({ email });
+
+          if (!userExists) {
+            const res = await fetch(
+              `${process.env.NEXT_PUBLIC_API_URL}/api/user`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name,
+                  email,
+                }),
+              }
+            );
+
+            const newUser = await res.json();
+            console.log(newUser);
+            return newUser;
+          }
+          console.log(userExists);
+          return userExists;
+        } catch (error) {}
       }
-      return user
-    }
+      // console.log(user);
+      // return user;
+    },
   },
 
   pages: {

@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["lh3.googleusercontent.com", "avatars.githubusercontent.com", "bolt-gcdn.sc-cdn.net"],
+    domains: [
+      "lh3.googleusercontent.com",
+      "avatars.githubusercontent.com",
+      "bolt-gcdn.sc-cdn.net",
+      "imgur.com",
+      "i.imgur.com"
+    ],
   },
 };
 

@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import getAllFlashcards from "@/lib/getAllFlashcards";
+import Image from "next/image";
+import shuffleArray from "@/lib/shuffleArray";
 
 function Page() {
   const [flashcards, setFlashcards] = useState([]);
@@ -10,12 +12,11 @@ function Page() {
   useEffect(() => {
     const fetchData = async () => {
       const reactFlashcards = await getAllFlashcards("react");
-      console.log(reactFlashcards.answer);
+      shuffleArray(reactFlashcards);
       setFlashcards(reactFlashcards);
     };
     fetchData();
   }, []);
-
 
   // handle user choice, flash red if wrong, green if correct
   const handleSelect = (event) => {
@@ -46,6 +47,16 @@ function Page() {
           <h1 className="text-white text-2xl tracking-wide my-10 lg:mx-16 mx-10">
             {flashcards[currentQuestion].description}
           </h1>
+          {flashcards[currentQuestion].image && (
+            <Image
+              src="https://i.imgur.com/ydm0eD8.png"
+              width={300}
+              height={300}
+              className="mb-10"
+              alt="hi"
+            ></Image>
+          )}
+
           {flashcards[currentQuestion].options.map((option, index) => (
             <div
               onClick={handleSelect}
