@@ -61,7 +61,7 @@ function Page() {
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white hover:cursor-pointer bg-slate-900 border text-xl border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
+              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-8`}
             >
               {option}
             </div>
