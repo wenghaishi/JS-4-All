@@ -15,7 +15,7 @@ function Demo() {
     setCode(newCode);
   };
   return (
-    <div className="pt-10 pb-20 px-16 flex flex-col items-center  bg-black">
+    <div className="pt-10 pb-20 px-16 flex-col items-center hidden sm:flex bg-black">
       <h1 className="text-white text-5xl mb-12">Try it out!</h1>
       <h2 className="mb-10 tracking-wider text-3xl w-10/12 text-center text-green-600">Two sum</h2>
       <Editor code={code} description={description} test={test} language="javascript" onChange={handleCodeChange} />
