@@ -41,7 +41,7 @@ function Page() {
   };
 
   return (
-    <div className="bg-black pt-16 fixed h-screen w-full text-white flex flex-col items-center">
+    <div className="bg-black pt-16 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
       {flashcards.length > 0 ? (
         <>
           <h1 className="text-white sm:text-2xl text-lg tracking-wide my-10 lg:mx-16 mx-4">
@@ -50,18 +50,17 @@ function Page() {
           {flashcards[currentQuestion].image && (
             <Image
               src={`${flashcards[currentQuestion].image}`}
-              width={400}
-              height={400}
-              className="mb-10 rounded-lg"
+              width={350}
+              height={350}
+              className="rounded-lg mb-10"
               alt="hi"
             />
           )}
-
           {flashcards[currentQuestion].options.map((option, index) => (
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
+              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm sm:text-lg px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
             >
               {option}
             </div>
