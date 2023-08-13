@@ -26,6 +26,10 @@ const flashcardSchema = new Schema({
     type: String,
     required: [true, "Please provide category"],
   },
+  difficulty: {
+    type: String,
+    // required: [true, "Please provide category"],
+  },
 
   // inventoryList: {
   //   name: { type: String, required: true },

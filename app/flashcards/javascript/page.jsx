@@ -52,8 +52,8 @@ function Page() {
           {flashcards[currentQuestion].image && (
             <Image
               src={`${flashcards[currentQuestion].image}`}
-              width={300}
-              height={300}
+              width={400}
+              height={400}
               className="mb-10 rounded-lg"
               alt="hi"
             />

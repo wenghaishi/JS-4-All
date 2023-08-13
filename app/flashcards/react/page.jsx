@@ -49,12 +49,12 @@ function Page() {
           </h1>
           {flashcards[currentQuestion].image && (
             <Image
-              src="https://i.imgur.com/ydm0eD8.png"
-              width={300}
-              height={300}
-              className="mb-10"
+              src={`${flashcards[currentQuestion].image}`}
+              width={400}
+              height={400}
+              className="mb-10 rounded-lg"
               alt="hi"
-            ></Image>
+            />
           )}
 
           {flashcards[currentQuestion].options.map((option, index) => (
