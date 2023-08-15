@@ -10,7 +10,7 @@ export default async function page( { params: { id } }) {
   console.log(question)
 
   return (
-    <div className="w-screen h-screen bg-black flex flex-col items-center pt-16">
+    <div className="w-screen h-screen px-10 bg-black flex flex-col items-center pt-16">
       <h1 className="text-white my-6 text-3xl font-black">{question.name}</h1>
       <Editor code={question.code} description={question.description} test={question.test}/>
     </div>
