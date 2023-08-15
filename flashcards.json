@@ -134,5 +134,20 @@
   "answer": 0,
   "category": "html",
   "difficulty": "easy"
+},
+{
+  "description": "Which of the following are parts of the CSS box model?",
+  "options": ["margins", "paddings", "borders", "All of the above"],
+  "answer": 3,
+  "category": "css",
+  "difficulty": "easy"
+},
+{
+  "description": "What will be the width of the div element given below?",
+  "options": ["310px", "350px", "360px", "None of the above"],
+  "answer": 2,
+  "category": "css",
+  "image": "https://i.imgur.com/ElTdLb4.png",
+  "difficulty": "easy"
 }
 ]

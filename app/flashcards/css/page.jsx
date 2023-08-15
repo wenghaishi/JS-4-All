@@ -1,6 +1,9 @@
+import FlashcardMain from "@/app/components/FlashcardMain"
+
 function page() {
+  const category = "css"
   return (
-    <div className="bg-black pt-16 h-screen text-white">CSS page</div>
+    <FlashcardMain category={category}/>
   )
 }
 export default page
