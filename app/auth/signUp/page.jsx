@@ -28,7 +28,6 @@ export default function UserSignUp() {
       setPasswordError("Minimum 6 characters");
       setIsLoading(false);
       submitForm = false;
-
     }
     if (emailRegex.test(email) === false) {
       setEmailError("Invalid email");
@@ -36,7 +35,7 @@ export default function UserSignUp() {
       submitForm = false;
     }
 
-    if (submitForm === false ) {
+    if (submitForm === false) {
       return;
     }
 
@@ -114,6 +113,7 @@ export default function UserSignUp() {
                   setPassword(e.target.value);
                   setPasswordError("");
                 }}
+                type="password"
               />
               {passwordError && (
                 <p className="text-red-500 mb-2">{passwordError}</p>
@@ -129,6 +129,7 @@ export default function UserSignUp() {
                   setConfirmPassword(e.target.value);
                   setConfirmPasswordError("");
                 }}
+                type="password"
               />
               {confirmPasswordError && (
                 <p className="text-red-500 mb-2">{confirmPasswordError}</p>

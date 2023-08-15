@@ -5,7 +5,7 @@ import Link from "next/link";
 export default async function IndexMarquee() {
   const questions = await getAllQuestions();
   return (
-    <Marquee className="text-white bg-black pb-36 pt-36">
+    <Marquee className="text-white bg-black pb-44 pt-44">
       {questions.map((q) => (
         <Link
           href={`/code/${q._id}`}

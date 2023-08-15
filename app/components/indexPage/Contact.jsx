@@ -7,7 +7,7 @@ function Contact() {
   }
 
   return (
-    <div className="w-full bg-black text-white flex flex-col items-center mt-20 mb-28">
+    <div className="w-full bg-black text-white flex flex-col items-center mt-28 mb-28">
       <h1 className="sm:text-2xl mb-7 text-lg"> Questions? Leave us a Message</h1>
       <form action="" onSubmit={handleSubmit} className="flex flex-col px-20 md:w-4/6">
         <label htmlFor="" className="flex flex-col mb-4">
