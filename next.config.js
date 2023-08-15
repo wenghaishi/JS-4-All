@@ -6,7 +6,8 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "bolt-gcdn.sc-cdn.net",
       "imgur.com",
-      "i.imgur.com"
+      "i.imgur.com",
+      "i.pinimg.com",
     ],
   },
 };

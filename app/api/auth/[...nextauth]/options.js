@@ -83,12 +83,15 @@ export const options = {
           return userExists;
         } catch (error) {}
       }
-      // console.log(user);
-      // return user;
+      console.log(user);
+      return user;
     },
   },
 
   pages: {
     signIn: "/auth/signIn",
   },
+  session: {
+    strategy: "jwt"
+  }
 };
