@@ -51,7 +51,7 @@ function Navbar() {
                 <h1 className="border-b border-neutral-50/50 pb-2">
                   <Link href={`/user/${session.user.email}`}>{session.user.email}</Link>
                 </h1>
-                <button className="text-left mt-2" onClick={() => signOut()}>
+                <button className="text-left mt-2" onClick={() => signOut({callbackUrl:"/"})}>
                   Logout
                 </button>
               </div>
