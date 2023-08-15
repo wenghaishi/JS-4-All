@@ -18,6 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body className={roboto.className}>
         <Providers>
 
