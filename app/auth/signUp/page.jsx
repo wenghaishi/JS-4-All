@@ -17,16 +17,20 @@ export default function UserSignUp() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     if (password != confirmPassword) {
       setConfirmPasswordError("Passwords do not match");
+      setIsLoading(false);
     }
     if (password === undefined || password.length < 6) {
       setPasswordError("Minimum 6 characters");
+      setIsLoading(false);
     }
     if (emailRegex.test(email) === false) {
       setEmailError("Invalid email");
+      setIsLoading(false);
     }
-    setIsLoading(true);
+    if (isLoading === false) return;
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
       method: "POST",
       headers: {
