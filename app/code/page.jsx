@@ -1,5 +1,5 @@
 import getAllQuestions from "@/lib/getAllQuestions";
-import QuestionsCategory from "../components/QuestionsCategory";
+import QuestionsCategory from "../components/flashcardsPage/QuestionsCategory";
 import Link from "next/link";
 
 export default async function Code() {

@@ -5,7 +5,7 @@ import Image from "next/image";
 import shuffleArray from "@/lib/shuffleArray";
 import EndOfFlashcard from "./EndOfFlashcard";
 
-function FlashcardMain({category}) {
+function FlashcardMain({ category }) {
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isEnd, setIsEnd] = useState(false);

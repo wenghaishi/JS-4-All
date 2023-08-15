@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
-import Features from "./components/Features";
-import Demo from "./components/Demo";
+import Features from "./components/indexPage/Features";
+import Demo from "./components/indexPage/Demo";
 import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import IndexMarquee from "./components/IndexMarquee";
-import Contact from "./components/Contact";
-
-
+import Hero from "./components/indexPage/Hero";
+import IndexMarquee from "./components/indexPage/IndexMarquee";
+import Contact from "./components/indexPage/Contact";
 
 export default function Home() {
   return (

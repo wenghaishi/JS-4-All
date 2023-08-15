@@ -1,5 +1,5 @@
 import Image from "next/image"
-import logo from "../logo.svg"
+import logo from "../../logo.svg"
 import Link from "next/link"
 
 function EndOfFlashcard() {
