@@ -7,6 +7,7 @@ import shuffleArray from "@/lib/shuffleArray";
 function Page() {
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isEnd, setIsEnd] = useState(false);
 
   // fetch all flashcard questions
   useEffect(() => {
@@ -30,7 +31,11 @@ function Page() {
       selectedElement.style.backgroundColor = "#009E60";
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
-        setCurrentQuestion((prev) => prev + 1);
+        if (currentQuestion < flashcards.length - 1) {
+          setCurrentQuestion((prev) => prev + 1);
+        } else {
+          setIsEnd(true);
+        }
       }, 300);
     } else {
       selectedElement.style.backgroundColor = "#D70040";
@@ -42,7 +47,9 @@ function Page() {
 
   return (
     <div className="bg-black pt-16 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
-      {flashcards.length > 0 ? (
+      {isEnd ? (
+        <h1 className="text-3xl mt-20">This is the end of the flashcards</h1>
+      ) : flashcards.length > 0 ? (
         <>
           <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">
             {flashcards[currentQuestion].description}

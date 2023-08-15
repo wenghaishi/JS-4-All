@@ -1,0 +1,138 @@
+[{
+  "description": "Which of the following methods is used to access HTML elements using Javascript?",
+  "options": [
+    "getElementById()",
+    "getElementsByClassName()",
+    "Both A and B",
+    "None of the above"
+  ],
+  "answer": "2",
+  "category": "javascript"
+},
+{
+  "description": "Which function is used to serialize an object into a JSON string in Javascript?",
+  "options": [
+    "stringify()",
+    "parse()",
+    "convert()",
+    "None of the above"
+  ],
+  "answer": "0",
+  "category": "javascript"
+},
+{
+  "description": "What does … operator do in JS?",
+  "options": [
+    "No such operator exists",
+    "It is used to describe a dadatype of undefined size",
+    "It is used to spread iterables to individual elements",
+    "None of the above"
+  ],
+  "answer": "2",
+  "category": "javascript"
+},
+{
+  "description": "Which of the following are two ways to handle data in react?",
+  "options": [
+    "States and components",
+    "States and services",
+    "Services and components",
+    "States and props"
+  ],
+  "answer": "3",
+  "category": "react"
+},
+{
+  "description": "What is the declarative way to render a dynamic list of components based on values in an array?",
+  "options": [
+    "Using the reduce array method",
+    "Using the <Each /> component",
+    "Using the Array.map() method",
+    "With a for/while loop"
+  ],
+  "answer": "2",
+  "category": "react"
+},
+{
+  "description": "What is the purpose of props in React?",
+  "options": [
+    "To pass styles to the component",
+    "To pass data from parent to child component",
+    "To pass data from child to parent component",
+    "To pass data within the same component"
+  ],
+  "answer": "1",
+  "category": "react"
+},
+{
+  "description": "What will be the output?",
+  "image": "https://i.imgur.com/ydm0eD8.png",
+  "options": [
+    "undefined",
+    "25",
+    "NaN",
+    "reference error"
+  ],
+  "answer": "0",
+  "category": "javascript"
+},
+{
+  "description": "What will be the output?",
+  "options": [
+    "true",
+    "false",
+    "undefined",
+    "None of the above"
+  ],
+  "answer": "0",
+  "image": "https://i.imgur.com/N6TU1ae.png",
+  "category": "javascript"
+},
+{
+  "description": "What will be the output?",
+  "options": [
+    "10",
+    "55",
+    "undefined",
+    "None of the above"
+  ],
+  "answer": "1",
+  "image": "https://i.imgur.com/ni9fdPj.png",
+  "category": "javascript",
+  "difficulty": "easy"
+},
+{
+  "description": "What will be the output of the following code?",
+  "options": [
+    "25",
+    "45",
+    "hello",
+    "None of the above"
+  ],
+  "answer": "1",
+  "image": "https://i.imgur.com/I9mNB5f.png",
+  "category": "react",
+  "difficulty": "easy"
+},
+{
+  "description": "What is the effect of the <b> tag?",
+  "options": ["It converts the text within it bold", "It is used to write black-colored font", "It is used to change the font size", "None of the above"],
+  "answer": 0,
+  "category": "html",
+  "difficulty": "easy"
+},
+{
+  "description": "What tag is used to render an image on a webpage?",
+  "options": ["src", "image", "img", "None of the above"],
+  "answer": 2,
+  "category": "html",
+  "difficulty": "easy"
+},
+{
+  "description": "The CSS inside HTML elements used alongside style attribute is called?",
+  "options": ["inline CSS", "external CSS", "internal CSS", "None of the above"],
+  "answer": 0,
+  "category": "html",
+  "difficulty": "easy"
+}
+]

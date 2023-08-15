@@ -7,13 +7,14 @@ import shuffleArray from "@/lib/shuffleArray";
 function Page() {
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isEnd, setIsEnd] = useState(false);
 
   // fetch all flashcard questions
   useEffect(() => {
     const fetchData = async () => {
-      const reactFlashcards = await getAllFlashcards("react");
-      shuffleArray(reactFlashcards);
-      setFlashcards(reactFlashcards);
+      const jsFlashcards = await getAllFlashcards("react");
+      shuffleArray(jsFlashcards);
+      setFlashcards(jsFlashcards);
     };
     fetchData();
   }, []);
@@ -30,7 +31,11 @@ function Page() {
       selectedElement.style.backgroundColor = "#009E60";
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
-        setCurrentQuestion((prev) => prev + 1);
+        if (currentQuestion < flashcards.length - 1) {
+          setCurrentQuestion((prev) => prev + 1);
+        } else {
+          setIsEnd(true);
+        }
       }, 300);
     } else {
       selectedElement.style.backgroundColor = "#D70040";
@@ -42,9 +47,11 @@ function Page() {
 
   return (
     <div className="bg-black pt-16 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
-      {flashcards.length > 0 ? (
+      {isEnd ? (
+        <h1 className="text-3xl mt-20">This is the end of the flashcards</h1>
+      ) : flashcards.length > 0 ? (
         <>
-          <h1 className="text-white sm:text-2xl text-lg tracking-wide my-10 lg:mx-16 mx-4">
+          <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">
             {flashcards[currentQuestion].description}
           </h1>
           {flashcards[currentQuestion].image && (
@@ -52,15 +59,16 @@ function Page() {
               src={`${flashcards[currentQuestion].image}`}
               width={350}
               height={350}
-              className="rounded-lg mb-10"
-              alt="hi"
+              className="mb-10 rounded-lg"
+              alt="flashcard question"
             />
           )}
+
           {flashcards[currentQuestion].options.map((option, index) => (
             <div
               onClick={handleSelect}
               key={index}
-              className={`text-white hover:cursor-pointer bg-slate-900 border text-sm sm:text-lg px-4 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
+              className={`text-white border text-sm sm:text-lg px-4 hover:cursor-pointer bg-slate-900 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
             >
               {option}
             </div>
