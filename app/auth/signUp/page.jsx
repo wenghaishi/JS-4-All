@@ -18,19 +18,28 @@ export default function UserSignUp() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    let submitForm = true;
     if (password != confirmPassword) {
       setConfirmPasswordError("Passwords do not match");
       setIsLoading(false);
+      submitForm = false;
     }
     if (password === undefined || password.length < 6) {
       setPasswordError("Minimum 6 characters");
       setIsLoading(false);
+      submitForm = false;
+
     }
     if (emailRegex.test(email) === false) {
       setEmailError("Invalid email");
       setIsLoading(false);
+      submitForm = false;
     }
-    if (isLoading === false) return;
+
+    if (submitForm === false ) {
+      return;
+    }
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user`, {
       method: "POST",
       headers: {
@@ -94,7 +103,6 @@ export default function UserSignUp() {
                   setName(e.target.value);
                 }}
               />
-              {emailError && <p className="text-red-500 mb-2">{emailError}</p>}
             </label>
 
             {/* password */}
