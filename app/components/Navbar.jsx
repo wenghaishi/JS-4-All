@@ -21,6 +21,8 @@ function Navbar() {
         <Link href="/" className="text-xs sm:text-lg flex items-center">JS-4-all</Link>
         <Link href="/code" className="text-xs sm:text-lg items-center hidden sm:flex">Algo-questions</Link>
         <Link href="/flashcards" className="text-xs sm:text-lg items-center hidden sm:flex">Flashcards</Link>
+        <Link href="/lessons" className="text-xs sm:text-lg items-center hidden sm:flex">Lessons</Link>
+
       </div>
 
       <div className="flex-row lg:flex hidden">

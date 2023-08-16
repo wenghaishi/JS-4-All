@@ -1,0 +1,19 @@
+/* styles.css */
+.item {
+  width: 90%;
+  padding: 18px 30px;
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.5s ease; /* Apply transition to background-color */
+}
+
+.selected {
+  background-color: #480454; /* Change background color for selected item */
+}
+
+h1 {
+  margin: 0;
+  transition: opacity 0.5s ease; /* Apply transition to opacity */
+}
+
