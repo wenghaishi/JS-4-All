@@ -1,8 +1,19 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import "./styles.css"; // Import your CSS file for custom styles
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Page() {
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/lessons`,
+    fetcher
+  );
+
+  console.log(data)
+
   const [select, setSelect] = useState();
 
   const handleSelect = (num) => {
@@ -16,12 +27,14 @@ function Page() {
         className={`item  bg-slate-800 ${select === 0 ? "selected" : ""}`}
         onClick={() => handleSelect(0)}
       >
-        <h1 className="text-2xl">Javascript foundation</h1>
+        <h1 className="text-2xl mb-4">Javascript foundation</h1>
         {select === 0 && (
           <div>
-            <h1 className="mt-6">Lesson 1</h1>
-            <h1 className="mt-6">Lesson 2</h1>
-            <h1 className="mt-6">Lesson 3</h1>
+            {data && data.map((lesson, index)=>(
+             <Link href={`/lessons/${lesson._id}`} key={index}>{lesson.name}</Link>
+            ))}
+            {/* <h1 className="mt-6">Lesson 2</h1>
+            <h1 className="mt-6">Lesson 3</h1> */}
           </div>
         )}
       </div>
