@@ -13,8 +13,8 @@ function Features() {
           <p>Test your theory knowledge.</p>
         </Link>
         <div className="p-12 border rounded-xl border-neutral-100/30 flex flex-col items-center justify-evenly text-center feature-card3">
-          <h2 className="text-3xl mb-2">Challenges</h2>
-          <p>Small javascript challenges</p>
+          <h2 className="text-3xl mb-2">Javascript Lessons</h2>
+          <p>Learn javascript basics</p>
         </div>
       </div>
     </div>

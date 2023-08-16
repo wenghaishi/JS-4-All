@@ -3,17 +3,27 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Mosaic, MosaicWindow } from "react-mosaic-component";
 import "react-mosaic-component/react-mosaic-component.css";
-import "../../app/globals.css"
+import "../../app/globals.css";
+import styled from "styled-components";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import js from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
 
+SyntaxHighlighter.registerLanguage("javascript", js);
+
+const CodeBlock = styled(SyntaxHighlighter)`
+  font-size: 13px;
+`;
 
 const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
 });
 
-function Editor({ code, description, language, onChange, test }) {
+function Editor({ code, description, language, onChange, test, answer }) {
   const [userCode, setUserCode] = useState("");
   const [output, setOutput] = useState("");
   const [correct, setCorrect] = useState();
+  const [currentTab, setCurrentTab] = useState(0);
 
   // highlight certain words
   const parts = description.split(/:(\w+)/);
@@ -30,7 +40,7 @@ function Editor({ code, description, language, onChange, test }) {
 
   const editorOptions = {
     selectOnLineNumbers: true,
-    fontSize: 14,
+    fontSize: 15,
     automaticLayout: true,
   };
 
@@ -66,9 +76,46 @@ function Editor({ code, description, language, onChange, test }) {
 
   const ELEMENT_MAP = {
     a: (
-      <h1 className="tracking-wide p-6 bg-black text-white  border border-neutral-50/20 text-md">
-        {styledParts}
-      </h1>
+      <div className="tracking-wide bg-black text-white  border border-neutral-50/20 text-md flex flex-col">
+        <div className="flex flex-row">
+          <button
+            className={`text-white border-r border-neutral-50/20 w-1/2 p-3 ${
+              currentTab === 0 ? "bg-black " : "border-b bg-[#1e1e1e]"
+            }`}
+            onClick={() => setCurrentTab(0)}
+          >
+            Description
+          </button>
+          <button
+            className={`text-white border-neutral-50/20 w-1/2 p-3 ${
+              currentTab === 1 ? "bg-black " : "border-b bg-[#1e1e1e]"
+            }`}
+            onClick={() => setCurrentTab(1)}
+          >
+            Solution
+          </button>
+        </div>
+        {currentTab === 0 ? (
+          <h1 className="p-6 bg-black h-full tracking-widest">{styledParts}</h1>
+        ) : (
+          <div className="flex items-center justify-center">
+            <CodeBlock
+              language="javascript"
+              style={atomDark}
+              customStyle={{
+                backgroundColor: "transparent",
+                opacity: "1",
+                paddingLeft: "25px",
+                paddingRight: "15px",
+                marginTop: "10px",
+                width: "100%"
+              }}
+            >
+              {answer.trim()}
+            </CodeBlock>
+          </div>
+        )}
+      </div>
     ),
     b: (
       <CodeEditor

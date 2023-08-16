@@ -19,6 +19,9 @@ const questionSchema = new Schema({
     type: Array,
     required: [true, "Please provide tests"],
   },
+  answer: {
+    type: String,
+  }
 
   // inventoryList: {
   //   name: { type: String, required: true },
