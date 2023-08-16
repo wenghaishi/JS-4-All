@@ -48,11 +48,11 @@ export default function Code() {
             <h1
               className={
                 q.difficulty === "easy"
-                  ? "text-green-600"
+                  ? "text-green-500"
                   : q.difficulty === "medium"
-                  ? "text-orange-600"
+                  ? "text-orange-400"
                   : q.difficulty === "hard"
-                  ? "text-red-600"
+                  ? "text-red-500"
                   : ""
               }
             >

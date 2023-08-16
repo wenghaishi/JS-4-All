@@ -11,6 +11,8 @@ function Demo() {
   const description =
     "Given an array of integers :arr and an integer :target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice.";
 
+  const answer = "Please login for full access"
+
   const test = ["[0,1]"];
   const handleCodeChange = (newCode) => {
     setCode(newCode);
@@ -26,6 +28,7 @@ function Demo() {
         code={code}
         description={description}
         test={test}
+        answer={answer}
         language="javascript"
         onChange={handleCodeChange}
       />

@@ -12,7 +12,7 @@ import js from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
 SyntaxHighlighter.registerLanguage("javascript", js);
 
 const CodeBlock = styled(SyntaxHighlighter)`
-  font-size: 13px;
+  font-size: 14px;
 `;
 
 const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
