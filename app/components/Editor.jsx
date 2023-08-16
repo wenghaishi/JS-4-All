@@ -52,6 +52,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
   const runCode = () => {
     try {
       let evaluatedCode = eval(userCode); // Evaluate the user's code
+      console.log(evaluatedCode)
       if (Array.isArray(evaluatedCode)) {
         evaluatedCode = "[" + evaluatedCode.join(", ") + "]";
         evaluatedCode = evaluatedCode.replace(" ", "");
@@ -111,7 +112,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
                 width: "100%"
               }}
             >
-              {answer.trim()}
+              {answer}
             </CodeBlock>
           </div>
         )}
