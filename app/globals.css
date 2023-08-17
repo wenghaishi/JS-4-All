@@ -99,3 +99,21 @@ body {
   color: black;
   background-color: black;
 }
+
+.bg-transition {
+  background: linear-gradient(to right, red, indigo);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-transition 5s linear infinite;
+}
+
+@keyframes gradient-transition {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
