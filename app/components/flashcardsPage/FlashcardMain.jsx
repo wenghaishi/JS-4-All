@@ -9,6 +9,8 @@ function FlashcardMain({ category }) {
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
+  const [wrongNumber, setWrongNumber] = useState(0);
+  const [correctNumber, setCorrectNumber] = useState(0);
 
   // fetch all flashcard questions
   useEffect(() => {
@@ -24,12 +26,12 @@ function FlashcardMain({ category }) {
   const handleSelect = (event) => {
     const originalBackgroundColor = event.currentTarget.style.backgroundColor;
     const selectedElement = event.currentTarget;
-
     if (
       selectedElement.innerHTML ===
       flashcards[currentQuestion].options[flashcards[currentQuestion].answer]
     ) {
       selectedElement.style.backgroundColor = "#009E60";
+      setCorrectNumber((prev) => prev + 1);
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
         if (currentQuestion < flashcards.length - 1) {
@@ -40,6 +42,7 @@ function FlashcardMain({ category }) {
       }, 300);
     } else {
       selectedElement.style.backgroundColor = "#D70040";
+      setWrongNumber((prev) => prev + 1);
       setTimeout(() => {
         selectedElement.style.backgroundColor = originalBackgroundColor;
       }, 300);
@@ -49,7 +52,10 @@ function FlashcardMain({ category }) {
   return (
     <div className="bg-black pt-16 pb-20 sm:pb-1 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
       {isEnd ? (
-        <EndOfFlashcard />
+        <EndOfFlashcard
+          correctNumber={correctNumber}
+          wrongNumber={wrongNumber}
+        />
       ) : flashcards.length > 0 ? (
         <>
           <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">

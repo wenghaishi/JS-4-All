@@ -23,7 +23,7 @@ function Hero() {
             borderRadius: "100%",
           }}
         >
-          <h1 className="z-30 px-6 text-transparent text-5xl whitespace-nowrap sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-500 lg:text-9xl font-black mb-10">
+          <h1 className="z-30 px-6 text-transparent cursor-pointer text-5xl whitespace-nowrap sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-500 lg:text-9xl font-black mb-10">
             JS-4-all
           </h1>
         </motion.div>

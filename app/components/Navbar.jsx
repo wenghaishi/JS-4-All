@@ -16,7 +16,7 @@ function Navbar() {
   };
 
   return (
-    <div className="h-16 z-40 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
+    <div className="h-16 z-30 border-neutral-50/20 w-screen text-white fixed top-0 backdrop-blur-md bg-transparent drop-shadow-md border-b flex flex-row items-center justify-between px-6 md:px-10">
       <div className="flex flex-row gap-8">
         <Link href="/" className="text-xs sm:text-lg flex items-center">JS-4-all</Link>
         <Link href="/code" className="text-xs sm:text-lg items-center hidden sm:flex">Algo-questions</Link>
