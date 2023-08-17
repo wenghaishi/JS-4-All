@@ -23,7 +23,7 @@ function Hero() {
             borderRadius: "100%",
           }}
         >
-          <h1 className="z-30 px-6 text-transparent text-5xl sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-700 lg:text-9xl font-black mb-10">
+          <h1 className="z-30 px-6 text-transparent text-5xl sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-500 lg:text-9xl font-black mb-10">
             JS-4-all
           </h1>
         </motion.div>
@@ -31,7 +31,7 @@ function Hero() {
           Learn javascript anytime, anywhere! If you are a...
         </h2> */}
 
-        <h1 className="sm:text-lg md:text-xl text-center lg:text-3xl  text-xs font-black flex flex-col px-4 sm:px-6 tracking-wide items-center py-2 md:px-10 md:py-6 text-white bg-gradient-to-r from-indigo-800 to-red-700 rounded-2xl">
+        <h1 className="sm:text-lg md:text-xl text-center lg:text-3xl  text-xs font-black flex flex-col px-4 sm:px-6 tracking-wide items-center py-2 md:px-10 md:py-6 text-white bg-gradient-to-r from-indigo-800 to-red-500 rounded-2xl">
           <span className="md:mb-4 sm:mb-1">Learn javascript anytime & anywhere, if you are a: </span>
           <Typewriter
             options={{
