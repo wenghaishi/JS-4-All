@@ -14,7 +14,7 @@ function Hero() {
       }}
       className="flex min-h-screen bg-black flex-col items-center justify-center p-24"
     >
-      <div className="z-30 flex flex-col items-center justify-center lg:mt-10 sm:p-20 rounded-xl">
+      <div className="z-0 flex flex-col items-center justify-center lg:mt-10 sm:p-20 rounded-xl">
         <motion.div
           whileHover={{ scale: 1.05, rotate: 2 }}
           whileTap={{
@@ -23,7 +23,7 @@ function Hero() {
             borderRadius: "100%",
           }}
         >
-          <h1 className="z-30 px-6 text-transparent cursor-pointer text-5xl whitespace-nowrap sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-500 lg:text-9xl font-black mb-10">
+          <h1 className="z-0 px-6 text-transparent cursor-pointer text-5xl whitespace-nowrap sm:text-7xl md:text-8xl bg-clip-text bg-gradient-to-r from-indigo-800 to-red-500 lg:text-9xl font-black mb-10">
             JS-4-all
           </h1>
         </motion.div>
