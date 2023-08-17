@@ -99,7 +99,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
         {currentTab === 0 ? (
           <h1 className="p-6 bg-black h-full tracking-widest">{styledParts}</h1>
         ) : (
-          <div className="flex items-center justify-center">
+          <div className="flex items-center overflow-x-hidden h-full justify-center">
             <CodeBlock
               language="javascript"
               style={atomDark}
@@ -109,7 +109,8 @@ function Editor({ code, description, language, onChange, test, answer }) {
                 paddingLeft: "25px",
                 paddingRight: "15px",
                 marginTop: "10px",
-                width: "100%"
+                width: "100%",
+                overflow: "hidden",
               }}
             >
               {answer}
