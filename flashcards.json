@@ -149,5 +149,27 @@
   "category": "css",
   "image": "https://i.imgur.com/ElTdLb4.png",
   "difficulty": "easy"
+},
+{
+  "description": "What are the different types of gradients in CSS?",
+  "options": ["Linear ", "Conic", "Radial", "Allof the above"],
+  "answer": 3,
+  "category": "css",
+  "difficulty": "easy"
+},
+{
+  "description": "In the below code snippet, in what order will the margins be added?",
+  "options": ["Top, Right, Bottom, Left", "Top, Left, Bottom, Right", "Top, Bottom, Left, Right", "Right, Left, Top, Bottom"],
+  "answer": 0,
+  "category": "css",
+  "image": "https://i.imgur.com/6NaIXsf.png",
+  "difficulty": "easy"
+},
+{
+  "description": "Which CSS property is used to specify the space between lines?",
+  "options": ["line-space", "line-spacing", "line-padding", "line-height"],
+  "answer": 3,
+  "category": "css",
+  "difficulty": "easy"
 }
 ]
