@@ -39,7 +39,7 @@ function Hero() {
               autoStart: true,
               loop: true,
               skipAddStyles: true,
-              typeSpeed: 50,
+              typeSpeed: 40,
               deleteSpeed: 30,
             }}
           />

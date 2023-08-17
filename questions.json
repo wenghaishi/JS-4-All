@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "64c9beac6f075d2147024f2c"
+  },
+  "name": "Two Sum",
+  "description": "Given an array of integers \n:nums and an integer :target, \n\nreturn indices of the two numbers such that \nthey add up to target. \n\nYou may assume that each input would have \nexactly one solution, and you may not use \nthe same element twice.",
+  "code": "\nconst nums = [2, 7, 11, 15];\nconst target = 9;\nconst twoSum = function(nums, target) {\n // write your code here\n}\n\ntwoSum(nums, target);",
+  "test": [
+    "[0,1]"
+  ],
+  "category": [
+    "array",
+    "hash table"
+  ],
+  "difficulty": "easy",
+  "answer": "const twoSum = function (nums, target) {\n  let left = 0;\n  let right = 1;\n\n  while (left < nums.length) {\n    if (nums[left] + nums[right] === target) {\n      return [left, right];\n    } else if (right === nums.length -1) {\n      left++;\n      right = left + 1;\n    } else {\n      right++;\n    }\n  }\n};"
+},
+{
+  "_id": {
+    "$oid": "64cb0ad2b17b94917548ddd2"
+  },
+  "name": "Longest Palindromic Substring",
+  "description": "Given a string :s, return the longest palindromic substring in :s. ",
+  "code": "\nconst s = 'babbd';\nconst longestPalindrome = function(s) {\n // write your code here\n}\n\nlongestPalindrome(s);",
+  "test": [
+    "bab"
+  ],
+  "difficulty": "medium",
+  "category": [
+    "string",
+    "dynamic programming\n"
+  ],
+  "answer": "const longestPalindrome = (s) => {\n  // ll: Left index of the longest palindrome.\n  // rr: Right index of the longest palindrome.\n  let ll = 0, rr = 0;\n\n  // Iterate all palindromes with center indices\n  // [..., i, ...] or [... i, i+1, ...]\n  for (let i = 0; i < s.length; i++) {\n    for (let j of [i, i+1]) {\n      for (l = i, r = j; s[l] && s[l] === s[r]; l--, r++)\n\n        // Found a new palindrome [l, ..., i, j, ..., r]\n        // Update the ll, rr if the newly found palindrome is longer than the\n        // existing one.\n        [ll, rr] = (r-l+1) > (rr-ll+1) ? [l, r] : [ll, rr];\n    }\n  }\n  return s.substring(ll, rr+1);\n}"
+},
+{
+  "_id": {
+    "$oid": "64cb2b56b17b94917548ddd3"
+  },
+  "name": "Palindrome Number",
+  "description": "Given an integer :x, return true if :x is palindrome integer. An integer is a palindrome when it reads the same backward as forward. ",
+  "code": "\nconst x = 131;\nconst palindromeNumber = (x) => {\n  // write your code here\n}\n\npalindromeNumber(x)",
+  "test": [
+    true
+  ],
+  "difficulty": "easy",
+  "category": "math",
+  "answer": "const palindromeNumber = (x) => {\n    const arr = String(x).split('');\n        \n    while (arr.length > 1) {\n        if (arr.shift() !== arr.pop()) {\n            return false;\n        }\n    }\n    \n    return true;\n};"
+}]

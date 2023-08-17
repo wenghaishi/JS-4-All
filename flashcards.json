@@ -171,5 +171,113 @@
   "answer": 3,
   "category": "css",
   "difficulty": "easy"
+},
+{
+  "description": "What is the purpose of the 'useEffect' hook in React?",
+  "options": [
+    "To create a new component.",
+    "To manage side effects in functional components.",
+    "To define the initial state of a component.",
+    "To handle routing in the application."
+  ],
+  "answer": "1",
+  "category": "react",
+  "difficulty": "easy"
+},
+{
+  "description": "Which CSS property is used to change the color of text?",
+  "options": [
+    "text-color",
+    "font-color",
+    "color",
+    "text-style"
+  ],
+  "answer": "2",
+  "category": "css",
+  "difficulty": "easy"
+},
+{
+  "description": "What does the 'href' attribute in an anchor ('<a>') tag represent?",
+  "options": [
+    "The location of the linked webpage.",
+    "The style of the link.",
+    "The size of the link.",
+    "The type of the link."
+  ],
+  "answer": "0",
+  "category": "html",
+  "difficulty": "easy"
+},
+{
+  "description": "Which JavaScript function is used to remove an item from an array by its index?",
+  "options": [
+    "splice()",
+    "remove()",
+    "extract()",
+    "delete()"
+  ],
+  "answer": "0",
+  "category": "javascript",
+  "difficulty": "easy"
+},
+{
+  "description": "What is the purpose of the 'border-radius' property in CSS?",
+  "options": [
+    "To define the width of a border.",
+    "To add a border around an element.",
+    "To create rounded corners for an element.",
+    "To change the color of a border."
+  ],
+  "answer": "2",
+  "category": "css",
+  "difficulty": "easy"
+},
+{
+  "description": "What is the purpose of the 'useState' hook in React?",
+  "options": [
+    "To manage side effects in functional components.",
+    "To create a new component.",
+    "To handle routing in the application.",
+    "To manage state in functional components."
+  ],
+  "answer": "3",
+  "category": "react",
+  "difficulty": "easy"
+},
+{
+  "description": "Which CSS property is used to control the positioning of an element?",
+  "options": [
+    "position",
+    "align",
+    "layout",
+    "place"
+  ],
+  "answer": "0",
+  "category": "css",
+  "difficulty": "easy"
+},
+{
+  "description": "What does the 'alt' attribute in an '<img>' tag stand for?",
+  "options": [
+    "Alternate text for the image.",
+    "Alignment of the image.",
+    "Animation length of the image.",
+    "Alternative source for the image."
+  ],
+  "answer": "0",
+  "category": "html",
+  "difficulty": "easy"
+},
+{
+  "description": "What is the purpose of the 'map' function in JavaScript?",
+  "options": [
+    "To create a new array with the results of calling a provided function on every element in the original array.",
+    "To add new elements to an array.",
+    "To remove elements from an array.",
+    "To sort the elements of an array."
+  ],
+  "answer": "0",
+  "category": "javascript",
+  "difficulty": "easy"
 }
 ]

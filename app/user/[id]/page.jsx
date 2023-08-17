@@ -9,11 +9,14 @@ function UserPage() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="bg-black pt-24 pb-10  h-screen flex flex-col sm:flex-row gap-10 px-10 text-white" >
+    <div className="bg-black pt-24 pb-10  h-screen flex flex-col sm:flex-row gap-10 px-10 text-white">
       {showModal && (
-        <div className="fixed z-50 h-screen w-screen top-0 left-0 bg-slate-800/60 flex items-center justify-center" onClick={()=>setShowModal(false)}>
-          <div className="bg-slate-900 rounded-xl w-3/6 h-3/6 text-white shadow-lg flex flex-col items-center justify-evenly">
-            
+        <>
+          <div
+            className="fixed h-screen w-screen z-40 top-0 left-0 bg-slate-800/60"
+            onClick={() => setShowModal(false)}
+          ></div>
+          <div className="bg-slate-900 -translate-x-1/2 left-1/2 top-1/2 -translate-y-1/2 fixed rounded-xl w-3/6 h-3/6 text-white shadow-lg z-50 flex flex-col items-center justify-evenly">
             <Image
               src={session.user.image}
               width={70}
@@ -29,7 +32,7 @@ function UserPage() {
               </h1>
             </div>
           </div>
-        </div>
+        </>
       )}
 
       <div className="flex flex-col bg-gray-800 rounded-xl w-2/6 p-14 ">
