@@ -47,7 +47,7 @@ function FlashcardMain({ category }) {
   };
 
   return (
-    <div className="bg-black pt-16 pb-16 sm:pb-1 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
+    <div className="bg-black pt-16 pb-20 sm:pb-1 fixed h-screen overflow-y-scroll w-full text-white flex flex-col items-center">
       {isEnd ? (
         <EndOfFlashcard />
       ) : flashcards.length > 0 ? (
