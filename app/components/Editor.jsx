@@ -99,7 +99,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
         {currentTab === 0 ? (
           <h1 className="p-6 bg-black h-full tracking-widest">{styledParts}</h1>
         ) : (
-          <div className="flex items-center overflow-x-hidden h-full justify-center">
+          <div className="flex items-center overflow-x-hidden justify-center">
             <CodeBlock
               language="javascript"
               style={atomDark}
