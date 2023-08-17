@@ -152,7 +152,7 @@
 },
 {
   "description": "What are the different types of gradients in CSS?",
-  "options": ["Linear ", "Conic", "Radial", "Allof the above"],
+  "options": ["Linear ", "Conic", "Radial", "All of the above"],
   "answer": 3,
   "category": "css",
   "difficulty": "easy"
