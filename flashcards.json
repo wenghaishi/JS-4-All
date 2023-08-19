@@ -134,7 +134,7 @@
   "options": ["It converts the text within it bold", "It is used to write black-colored font", "It is used to change the font size", "None of the above"],
   "answer": 0,
   "category": "html",
-  "difficulty": "easy"
+  "difficulty": "medium"
 },
 {
   "description": "What tag is used to render an image on a webpage?",
@@ -197,7 +197,7 @@
   ],
   "answer": "1",
   "category": "react",
-  "difficulty": "easy"
+  "difficulty": "medium"
 },
 {
   "description": "Which CSS property is used to change the color of text?",
@@ -294,5 +294,124 @@
   "answer": "0",
   "category": "javascript",
   "difficulty": "easy"
-}
-]
+},
+{
+  "description": "Which CSS property is used to create a shadow effect around an element?",
+  "options": [
+    "box-shadow",
+    "text-shadow",
+    "border-shadow",
+    "element-shadow"
+  ],
+  "answer": "0",
+  "category": "css",
+  "difficulty": "medium"
+},
+{
+  "description": "What is the purpose of the CSS property 'z-index'?",
+  "options": [
+    "To control the order of overlapping elements along the z-axis.",
+    "To control the font size of an element.",
+    "To control the border style of an element.",
+    "To control the opacity of an element."
+  ],
+  "answer": "0",
+  "category": "css",
+  "difficulty": "medium"
+},
+{
+  "description": "What is the purpose of the 'memo' function in React?",
+  "options": [
+    "To create a new functional component.",
+    "To optimize the performance of functional components by preventing unnecessary re-renders.",
+    "To handle asynchronous actions in functional components.",
+    "To create higher-order components."
+  ],
+  "answer": "1",
+  "category": "react",
+  "difficulty": "hard"
+},  
+{
+  "description": "What is the difference between 'let' and 'const' in JavaScript for declaring variables?",
+  "options": [
+    "'let' variables can be reassigned, while 'const' variables cannot be reassigned.",
+    "'let' variables are block-scoped, while 'const' variables are function-scoped.",
+    "'let' variables are hoisted, while 'const' variables are not.",
+    "'let' variables have global scope, while 'const' variables have local scope."
+  ],
+  "answer": "0",
+  "category": "javascript",
+  "difficulty": "medium"
+},
+{
+  "description": "What does the JavaScript 'call' method do?",
+  "options": [
+    "It invokes a function and binds 'this' to the provided value.",
+    "It creates a new function.",
+    "It returns a boolean indicating if a value is callable.",
+    "It changes the prototype of an object."
+  ],
+  "answer": "0",
+  "category": "javascript",
+  "difficulty": "medium"
+},
+{
+  "description": "What is the purpose of the HTML 'canvas' element?",
+  "options": [
+    "To create interactive graphics and animations using JavaScript.",
+    "To display images in a slideshow format.",
+    "To display mathematical equations and formulas.",
+    "To define the layout structure of a webpage."
+  ],
+  "answer": "0",
+  "category": "html",
+  "difficulty": "hard"
+},
+{
+  "description": "What is the purpose of the CSS 'transform' property?",
+  "options": [
+    "To change the size of an element.",
+    "To apply 3D transformations to an element.",
+    "To adjust the transparency of an element.",
+    "To control the text alignment within an element."
+  ],
+  "answer": "1",
+  "category": "css",
+  "difficulty": "hard"
+},
+{
+"description": "What is the CSS selector for selecting an even-numbered row within a table?",
+"options": [
+  "tr:nth-child(even)",
+  "tr:nth-of-type(even)",
+  "tr:even",
+  "tr:nth-even"
+],
+"answer": "1",
+"category": "css",
+"difficulty": "hard"
+},
+{
+  "description": "In React, what is the purpose of the 'useReducer' hook?",
+  "options": [
+    "To manage side effects in functional components.",
+    "To handle complex state logic with a reducer function.",
+    "To provide routing functionality.",
+    "To create a new functional component."
+  ],
+  "answer": "1",
+  "category": "react",
+  "difficulty": "hard"
+},
+{
+  "description": "What is a closure in JavaScript?",
+  "options": [
+    "A function that takes another function as an argument.",
+    "A function that returns an object.",
+    "A combination of a function and the lexical environment within which that function was declared.",
+    "A function that is invoked without any arguments."
+  ],
+  "answer": "2",
+  "category": "javascript",
+  "difficulty": "hard"
+}]
