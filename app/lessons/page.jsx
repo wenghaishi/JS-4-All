@@ -12,7 +12,7 @@ function Page() {
     fetcher
   );
 
-  console.log(data)
+  console.log(data);
 
   const [select, setSelect] = useState();
 
@@ -29,12 +29,13 @@ function Page() {
       >
         <h1 className="text-2xl mb-4">Javascript foundation</h1>
         {select === 0 && (
-          <div>
-            {data && data.map((lesson, index)=>(
-             <Link href={`/lessons/${lesson._id}`} key={index}>{lesson.name}</Link>
-            ))}
-            {/* <h1 className="mt-6">Lesson 2</h1>
-            <h1 className="mt-6">Lesson 3</h1> */}
+          <div className="flex flex-col">
+            {data &&
+              data.map((lesson, index) => (
+                <Link href={`/lessons/${lesson._id}`} key={index} className="my-1">
+                  {lesson.name}
+                </Link>
+              ))}
           </div>
         )}
       </div>

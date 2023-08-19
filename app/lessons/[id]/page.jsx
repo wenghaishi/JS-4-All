@@ -13,7 +13,7 @@ async function page({ params: { id } }) {
       {lesson.sections.map((section) => (
         <div key={section.id}>
           <h2 className="text-2xl mt-10">{section.title}</h2>
-          <p className="text-base mt-6">{section.body}</p>
+          <p className="text-base mt-6 sm:px-10 md:px-14">{section.body}</p>
         </div>
       ))}
     </div>
