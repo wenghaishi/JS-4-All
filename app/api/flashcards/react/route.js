@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   await connectDB();
-  const questions = await Flashcard.find({ category: "react" });
+  const questions = await Flashcard.find({
+    category: "react",
+  });
   return NextResponse.json(questions);
 }

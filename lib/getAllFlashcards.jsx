@@ -1,5 +1,6 @@
 export default async function getAllFlashcards(category) {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const difficulty = "easy"
   const response = await fetch(`${apiUrl}/api/flashcards/${category}`, {
     cache: "no-store",
   });

@@ -7,7 +7,9 @@
     "None of the above"
   ],
   "answer": "2",
-  "category": "javascript"
+  "category": "javascript",
+  "difficulty": "easy"
+
 },
 {
   "description": "Which function is used to serialize an object into a JSON string in Javascript?",
@@ -18,7 +20,9 @@
     "None of the above"
   ],
   "answer": "0",
-  "category": "javascript"
+  "category": "javascript",
+  "difficulty": "easy"
+
 },
 {
   "description": "What does … operator do in JS?",
@@ -29,7 +33,9 @@
     "None of the above"
   ],
   "answer": "2",
-  "category": "javascript"
+  "category": "javascript",
+  "difficulty": "easy"
+
 },
 {
   "description": "Which of the following are two ways to handle data in react?",
@@ -40,7 +46,9 @@
     "States and props"
   ],
   "answer": "3",
-  "category": "react"
+  "category": "react",
+  "difficulty": "easy"
+
 },
 {
   "description": "What is the declarative way to render a dynamic list of components based on values in an array?",
@@ -51,7 +59,9 @@
     "With a for/while loop"
   ],
   "answer": "2",
-  "category": "react"
+  "category": "react",
+  "difficulty": "easy"
+
 },
 {
   "description": "What is the purpose of props in React?",
@@ -62,7 +72,8 @@
     "To pass data within the same component"
   ],
   "answer": "1",
-  "category": "react"
+  "category": "react",
+  "difficulty": "easy"
 },
 {
   "description": "What will be the output?",
@@ -74,7 +85,9 @@
     "reference error"
   ],
   "answer": "0",
-  "category": "javascript"
+  "category": "javascript",
+  "difficulty": "easy"
+
 },
 {
   "description": "What will be the output?",
@@ -86,7 +99,9 @@
   ],
   "answer": "0",
   "image": "https://i.imgur.com/N6TU1ae.png",
-  "category": "javascript"
+  "category": "javascript",
+  "difficulty": "easy"
+
 },
 {
   "description": "What will be the output?",

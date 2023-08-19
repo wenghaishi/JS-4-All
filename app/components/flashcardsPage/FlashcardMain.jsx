@@ -5,7 +5,7 @@ import Image from "next/image";
 import shuffleArray from "@/lib/shuffleArray";
 import EndOfFlashcard from "./EndOfFlashcard";
 
-function FlashcardMain({ category }) {
+function FlashcardMain({ category, difficulty }) {
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
@@ -15,7 +15,8 @@ function FlashcardMain({ category }) {
   // fetch all flashcard questions
   useEffect(() => {
     const fetchData = async () => {
-      const jsFlashcards = await getAllFlashcards(category);
+      const rawFlashcards = await getAllFlashcards(category);
+      const jsFlashcards = rawFlashcards.filter(question => question.difficulty === difficulty)
       shuffleArray(jsFlashcards);
       setFlashcards(jsFlashcards);
     };

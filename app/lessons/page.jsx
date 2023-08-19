@@ -28,16 +28,18 @@ function Page() {
         onClick={() => handleSelect(0)}
       >
         <h1 className="text-2xl mb-4">Javascript foundation</h1>
-        {select === 0 && (
-          <div className="flex flex-col">
-            {data &&
-              data.map((lesson, index) => (
-                <Link href={`/lessons/${lesson._id}`} key={index} className="my-1">
-                  {lesson.name}
-                </Link>
-              ))}
-          </div>
-        )}
+        <div className="flex flex-col">
+          {select === 0 && (
+            <div className="flex flex-col">
+              {data &&
+                data.map((lesson, index) => (
+                  <Link href={`/lessons/${lesson._id}`} key={index} className="mt-6">
+                    {lesson.name}
+                  </Link>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
       <div
         className={`item bg-slate-800 ${select === 1 ? "selected" : ""}`}
