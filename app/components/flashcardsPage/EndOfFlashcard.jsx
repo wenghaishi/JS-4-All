@@ -1,8 +1,14 @@
+'use client'
 import Image from "next/image"
 import logo from "../../logo.svg"
 import Link from "next/link"
+import useSWR from 'swr'
 
 function EndOfFlashcard({correctNumber, wrongNumber}) {
+
+  
+  
+
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <Image src={logo} alt="js-4-all logo" width={300} height={300}/>

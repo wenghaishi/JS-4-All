@@ -8,7 +8,7 @@ function Page() {
         <Link
           key={index}
           href={`/flashcards/css/${difficulty}`}
-          className="w-11/12 py-10 border border-neutral-50/30 text-center text-3xl rounded-xl feature-card1"
+          className="w-11/12 py-10 border border-neutral-50/30 text-center text-3xl rounded-xl feature-card4"
         >
           {difficulty}
         </Link>

@@ -52,8 +52,6 @@ export const options = {
 
   callbacks: {
     async signIn({ user, account }) {
-      // console.log(user);
-      // console.log(account);
       const { name, email } = user;
       if (account.provider === "google") {
         try {
@@ -76,22 +74,38 @@ export const options = {
             );
 
             const newUser = await res.json();
-            console.log(newUser);
+
             return newUser;
           }
-          console.log(userExists);
           return userExists;
         } catch (error) {}
       }
-      console.log(user);
       return user;
     },
-  },
 
+    // async jwt({ token, account, profile }) {
+    //   // Persist the OAuth access_token and or the user id to the token right after signin
+    //   console.log({"profile": profile})
+    //   console.log({"token": token})
+    //   console.log({"account": account})
+    //   if (account) {
+    //     token.accessToken = account.access_token
+    //     token.id = profile.id
+    //   }
+    //   return token
+    // }
+
+    async session({ session, token}) {
+      // Send properties to the client, like an access_token and user id from a provider.
+      session.user._id = token.sub
+      
+      return session
+    }
+  },
   pages: {
     signIn: "/auth/signIn",
   },
   session: {
-    strategy: "jwt"
-  }
+    strategy: "jwt",
+  },
 };

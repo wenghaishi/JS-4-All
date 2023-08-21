@@ -3,6 +3,9 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
+import useSWR from 'swr'
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 
 function UserPage() {
   const { status, data: session } = useSession();

@@ -51,7 +51,7 @@ function Navbar() {
             <>
               <div className="fixed bg-gray-700 right-14 top-16 z-10 rounded-lg p-6 flex flex-col" onClick={handleToggleModal}>
                 <h1 className="border-b border-neutral-50/50 pb-2">
-                  <Link href={`/user/${session.user.email}`}>{session.user.email}</Link>
+                  <Link href={`/user/${session.user._id}`}>{session.user.email}</Link>
                 </h1>
                 <button className="text-left mt-2" onClick={() => signOut({callbackUrl:"/"})}>
                   Logout

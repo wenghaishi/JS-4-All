@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mosaic, MosaicWindow } from "react-mosaic-component";
 import "react-mosaic-component/react-mosaic-component.css";
 import "../../app/globals.css";
@@ -20,7 +20,7 @@ const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
 });
 
 function Editor({ code, description, language, onChange, test, answer }) {
-  const [userCode, setUserCode] = useState("");
+  const [userCode, setUserCode] = useState();
   const [output, setOutput] = useState("");
   const [correct, setCorrect] = useState();
   const [currentTab, setCurrentTab] = useState(0);

@@ -8,7 +8,7 @@ async function page({ params: { id } }) {
   const lesson = await response.json();
 
   return (
-    <div className=" text-center pt-16 bg-black text-white flex flex-col items-center">
+    <div className=" text-center pt-16 pb-24 bg-black text-white flex flex-col items-center">
       <h1 className="text-4xl mt-16">{lesson.name}</h1>
       {lesson.sections.map((section) => (
         <div key={section.id}>

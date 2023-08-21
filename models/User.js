@@ -13,12 +13,16 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    // required: [true, "Please provide password"],
   },
   image: {
     type: String,
   },
-
+  flashcardCompletions: {
+    type: Number,
+  },
+  questionCompletions: {
+    type: Number,
+  }
 });
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
