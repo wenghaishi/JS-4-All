@@ -1,15 +1,20 @@
 "use client";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useState } from "react";
-import useSWR from 'swr'
+import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-
 function UserPage() {
-  const { status, data: session } = useSession();
+  const { data: session } = useSession();
   const [showModal, setShowModal] = useState(false);
+  const { data, error, isLoading } = useSWR(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/user/${session.user._id}`,
+    fetcher
+  );
+
+  console.log(data)
 
   return (
     <div className="bg-black pt-24 pb-10  h-screen flex flex-col sm:flex-row gap-10 px-10 text-white">
@@ -64,8 +69,8 @@ function UserPage() {
       </div>
 
       <div className="w-4/6 bg-gray-800 p-14 rounded-xl">
-        <h1 className="text-white text-lg">Flashcard completions:</h1>
-        <h1 className="text-white text-lg">Algo-question completions:</h1>
+        <h1 className="text-white text-lg tracking-wide">Flashcard completions:  <span className="text-green-500">{data && data.flashcardCompletions}</span></h1>
+        <h1 className="text-white text-lg tracking-wide">Algo-question completions:</h1>
       </div>
     </div>
   );

@@ -4,13 +4,17 @@ import getAllFlashcards from "@/lib/getAllFlashcards";
 import Image from "next/image";
 import shuffleArray from "@/lib/shuffleArray";
 import EndOfFlashcard from "./EndOfFlashcard";
+import { useSession } from "next-auth/react";
+
 
 function FlashcardMain({ category, difficulty }) {
+  const { data: session } = useSession();
   const [flashcards, setFlashcards] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
   const [wrongNumber, setWrongNumber] = useState(0);
   const [correctNumber, setCorrectNumber] = useState(0);
+  
 
   // fetch all flashcard questions
   useEffect(() => {
@@ -56,6 +60,7 @@ function FlashcardMain({ category, difficulty }) {
         <EndOfFlashcard
           correctNumber={correctNumber}
           wrongNumber={wrongNumber}
+          userId={session.user._id}
         />
       ) : flashcards.length > 0 ? (
         <>

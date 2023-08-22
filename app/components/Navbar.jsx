@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 function Navbar() {
-  const { status, data: session } = useSession();
+  const { data: session } = useSession();
   const [toggleModal, setToggleModal] = useState(false);
   if (session) {
     console.log(session)
