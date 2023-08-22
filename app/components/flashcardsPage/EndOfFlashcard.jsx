@@ -1,25 +1,27 @@
-
-
+"use client";
 import Image from "next/image";
 import logo from "../../logo.svg";
 import Link from "next/link";
+import { useEffect } from "react";
 
-async function EndOfFlashcard({ correctNumber, wrongNumber, userId }) {
-  console.log(correctNumber);
-
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/user/${userId}`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ amountToAdd: correctNumber }),
-    }
-  );
-
-  const response = await res.json();
-  console.log(response);
+function EndOfFlashcard({ correctNumber, wrongNumber, userId }) {
+  useEffect(() => {
+    const updateData = async () => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/user/${userId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ amountToAdd: correctNumber }),
+        }
+      );
+      const response = await res.json();
+      console.log(response);
+    };
+    updateData();
+  }, []);
 
   return (
     <div className="h-full flex flex-col items-center justify-center">
