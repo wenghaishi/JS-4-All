@@ -136,14 +136,6 @@ export default function UserSignUp() {
               )}
             </label>
 
-            {/* avatar image */}
-            {/* <label htmlFor="" className="flex flex-col">
-            Avatar image:
-            <input
-              className="mt-3 focus:outline-none file:bg-gray-800 file:text-white file:rounded-lg file:cursor-pointer cursor-pointer file:py-2 file:px-6 file:mr-4 file:outline-none file:border-0"
-              type="file"
-            />
-          </label> */}
 
             <button
               type="submit"

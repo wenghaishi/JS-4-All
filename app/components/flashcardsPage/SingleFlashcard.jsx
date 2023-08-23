@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function SingleFlashcard({flashcards, currentQuestion, handleSelect}) {
+export default function SingleFlashcard({
+  flashcards,
+  currentQuestion,
+  handleSelect,
+}) {
   return (
     <>
       <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">

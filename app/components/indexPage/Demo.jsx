@@ -19,7 +19,7 @@ function Demo() {
   };
 
   return (
-    <div className="pt-10 w-screen h-screen pb-20 px-16 flex-col items-center hidden sm:flex bg-black">
+    <section className="pt-10 w-screen h-screen pb-20 px-16 flex-col items-center hidden sm:flex bg-black">
       <h1 className="text-white text-5xl mb-12">Try it out!</h1>
       <h2 className="mb-10 tracking-wider text-3xl w-10/12 text-center text-green-600">
         Two sum
@@ -32,7 +32,7 @@ function Demo() {
         language="javascript"
         onChange={handleCodeChange}
       />
-    </div>
+    </section>
   );
 }
 export default Demo;

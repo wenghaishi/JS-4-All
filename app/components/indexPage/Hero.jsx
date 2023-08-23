@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 
 function Hero() {
   return (
-    <div
+    <section
       style={{
         backgroundImage: "url('/hero.jpg')",
         backgroundRepeat: "no-repeat",
@@ -27,9 +27,6 @@ function Hero() {
             JS-4-all
           </h1>
         </motion.div>
-        {/* <h2 className="mb-10 font-black  text-2xl mx-7 md:mx-1 md:text-2xl lg:text-3xl text-center">
-          Learn javascript anytime, anywhere! If you are a...
-        </h2> */}
 
         <h1 className="sm:text-base md:text-xl text-center lg:text-3xl  text-xs font-black flex flex-col px-4 sm:px-6 tracking-wide items-center py-2 md:px-10 md:py-6 text-white bg-gradient-to-r from-indigo-800 to-red-500 rounded-2xl">
           <span className="md:mb-4 sm:mb-1">Learn javascript anytime & anywhere, if you are a... </span>
@@ -44,19 +41,8 @@ function Hero() {
             }}
           />
         </h1>
-        {/* <div className="flex flex-row gap-4 text-center justify-center align-middle">
-          <h2 className="font-black px-4 sm:px-6 flex items-center py-2 md:px-10 md:py-6 rounded-2xl text-white bg-indigo-900">
-            Student
-          </h2>
-          <h2 className="font-black px-4 sm:px-6 flex items-center py-2 md:px-10 md:py-6 text-white bg-indigo-900 rounded-2xl">
-            Aspiring developer
-          </h2>
-          <h2 className="font-black px-4 sm:px-6 flex items-center py-2 md:px-10 md:py-6 text-white bg-indigo-900 rounded-2xl">
-            Hobbyist
-          </h2>
-        </div> */}
       </div>
-    </div>
+    </section>
   );
 }
 export default Hero;

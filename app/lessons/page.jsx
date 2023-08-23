@@ -12,8 +12,6 @@ function Page() {
     fetcher
   );
 
-  console.log(data);
-
   const [select, setSelect] = useState();
 
   const handleSelect = (num) => {
