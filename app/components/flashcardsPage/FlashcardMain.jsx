@@ -5,6 +5,7 @@ import Image from "next/image";
 import shuffleArray from "@/lib/shuffleArray";
 import EndOfFlashcard from "./EndOfFlashcard";
 import { useSession } from "next-auth/react";
+import SingleFlashcard from "./SingleFlashcard";
 
 
 function FlashcardMain({ category, difficulty }) {
@@ -14,7 +15,6 @@ function FlashcardMain({ category, difficulty }) {
   const [isEnd, setIsEnd] = useState(false);
   const [wrongNumber, setWrongNumber] = useState(0);
   const [correctNumber, setCorrectNumber] = useState(0);
-  
 
   // fetch all flashcard questions
   useEffect(() => {
@@ -63,30 +63,7 @@ function FlashcardMain({ category, difficulty }) {
           userId={session.user._id}
         />
       ) : flashcards.length > 0 ? (
-        <>
-          <h1 className="text-white text-lg sm:text-2xl tracking-wider mx-4 my-10">
-            {flashcards[currentQuestion].description}
-          </h1>
-          {flashcards[currentQuestion].image && (
-            <Image
-              src={`${flashcards[currentQuestion].image}`}
-              width={300}
-              height={300}
-              className="mb-10 rounded-lg"
-              alt="flashcard question"
-            />
-          )}
-
-          {flashcards[currentQuestion].options.map((option, index) => (
-            <div
-              onClick={handleSelect}
-              key={index}
-              className={`text-white border text-sm sm:text-lg px-4 hover:cursor-pointer bg-slate-900 border-neutral-50/30 w-8/12 text-center rounded-xl mb-6 py-4 sm:py-8`}
-            >
-              {option}
-            </div>
-          ))}
-        </>
+        <SingleFlashcard  flashcards={flashcards} currentQuestion={currentQuestion} handleSelect={handleSelect}/>
       ) : (
         <p className="text-2xl mt-60">Loading flashcards...</p>
       )}

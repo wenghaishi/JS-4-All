@@ -5,7 +5,7 @@ import { Mosaic, MosaicWindow } from "react-mosaic-component";
 import "react-mosaic-component/react-mosaic-component.css";
 import "../../app/globals.css";
 import CodeBlock from "./questionsPage/CodeBlock";
-import DescriptionNav from "./questionsPage/descriptionNav";
+import DescriptionNav from "./questionsPage/DescriptionNav";
 import EditorOutput from "./questionsPage/EditorOutput";
 
 const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
