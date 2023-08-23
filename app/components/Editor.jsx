@@ -4,16 +4,9 @@ import { useState, useEffect } from "react";
 import { Mosaic, MosaicWindow } from "react-mosaic-component";
 import "react-mosaic-component/react-mosaic-component.css";
 import "../../app/globals.css";
-import styled from "styled-components";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import js from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
-
-SyntaxHighlighter.registerLanguage("javascript", js);
-
-const CodeBlock = styled(SyntaxHighlighter)`
-  font-size: 14px;
-`;
+import CodeBlock from "./questionsPage/CodeBlock";
+import DescriptionNav from "./questionsPage/descriptionNav";
+import EditorOutput from "./questionsPage/EditorOutput";
 
 const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
@@ -52,7 +45,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
   const runCode = () => {
     try {
       let evaluatedCode = eval(userCode); // Evaluate the user's code
-      console.log(evaluatedCode)
+      console.log(evaluatedCode);
       if (Array.isArray(evaluatedCode)) {
         evaluatedCode = "[" + evaluatedCode.join(", ") + "]";
         evaluatedCode = evaluatedCode.replace(" ", "");
@@ -78,46 +71,11 @@ function Editor({ code, description, language, onChange, test, answer }) {
   const ELEMENT_MAP = {
     a: (
       <div className="tracking-wide bg-black text-white  border border-neutral-50/20 text-md flex flex-col">
-        <div className="flex flex-row">
-          <button
-            className={`text-white border-r border-neutral-50/20 w-1/2 p-3 ${
-              currentTab === 0 ? "bg-black " : "border-b bg-[#1e1e1e]"
-            }`}
-            onClick={() => setCurrentTab(0)}
-          >
-            Description
-          </button>
-          <button
-            className={`text-white border-neutral-50/20 w-1/2 p-3 ${
-              currentTab === 1 ? "bg-black " : "border-b bg-[#1e1e1e]"
-            }`}
-            onClick={() => setCurrentTab(1)}
-          >
-            Solution
-          </button>
-        </div>
+        <DescriptionNav currentTab={currentTab} setCurrentTab={setCurrentTab}/>
         {currentTab === 0 ? (
           <h1 className="p-6 bg-black h-full tracking-widest">{styledParts}</h1>
         ) : (
-          <div className="flex h-full w-full overflow-x-hidden overflow-y-hidden justify-center">
-            <CodeBlock
-              language="javascript"
-              style={atomDark}
-              customStyle={{
-                backgroundColor: "transparent",
-                opacity: "1",
-                paddingLeft: "25px",
-                paddingRight: "15px",
-                marginTop: "10px",
-                width: "100%",
-                overflow: "hidden",
-                width: "100%",
-                display: "flex",
-              }}
-            >
-              {answer}
-            </CodeBlock>
-          </div>
+          <CodeBlock answer={answer} />
         )}
       </div>
     ),
@@ -132,26 +90,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
       />
     ),
     c: (
-      <div className="flex bg-black flex-row items-start justify-between">
-        <h3 className="border flex flex-row justify-between border-neutral-50/20 w-full mr-3 tracking-widest px-6 py-4 text-slate-100">
-          Output: {output && output}
-          {correct !== undefined && (
-            <div className="flex flex-row">
-              <p
-                className={`${
-                  correct ? "text-green-500" : "text-red-500"
-                } mr-6`}
-              >
-                {correct ? "Test passed" : "Test failed"}
-              </p>
-              <p>Answer: {test[0]}</p>
-            </div>
-          )}
-        </h3>
-        <button onClick={runCode} className="bg-white px-16 py-4 rounded-lg">
-          Run
-        </button>
-      </div>
+      <EditorOutput correct={correct} output={output} runCode={runCode} test={test}/>
     ),
   };
 

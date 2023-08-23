@@ -22,13 +22,15 @@ function Page() {
 
   return (
     <div className="bg-black pt-28 h-screen w-full flex flex-col items-center text-white">
+
+      {/* new card */}
       <h1 className="text-3xl mb-10">Javascript lessons</h1>
-      <div
+      <section
         className={`item  bg-slate-800 ${select === 0 ? "selected" : ""}`}
         onClick={() => handleSelect(0)}
       >
         <h1 className="text-2xl mb-4">Javascript foundation</h1>
-        <div className="flex flex-col">
+        <section className="flex flex-col">
           {select === 0 && (
             <div className="flex flex-col">
               {data &&
@@ -39,19 +41,19 @@ function Page() {
                 ))}
             </div>
           )}
-        </div>
-      </div>
+        </section>
+      </section>
       <div
         className={`item bg-slate-800 ${select === 1 ? "selected" : ""}`}
         onClick={() => handleSelect(1)}
       >
         <h1 className="text-2xl">Javascript functions</h1>
         {select === 1 && (
-          <div>
+          <section>
             <h1 className="mt-6">Lesson 1</h1>
             <h1 className="mt-6">Lesson 2</h1>
             <h1 className="mt-6">Lesson 3</h1>
-          </div>
+          </section>
         )}
       </div>
       <div
