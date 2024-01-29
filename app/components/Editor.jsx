@@ -1,12 +1,12 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import { Mosaic, MosaicWindow } from "react-mosaic-component";
-import "react-mosaic-component/react-mosaic-component.css";
 import "../../app/globals.css";
 import CodeBlock from "./questionsPage/CodeBlock";
 import DescriptionNav from "./questionsPage/DescriptionNav";
 import EditorOutput from "./questionsPage/EditorOutput";
+import { Resizable } from "react-resizable";
+import "react-resizable/css/styles.css";
 
 const CodeEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
@@ -17,6 +17,27 @@ function Editor({ code, description, language, onChange, test, answer }) {
   const [output, setOutput] = useState("");
   const [correct, setCorrect] = useState();
   const [currentTab, setCurrentTab] = useState(0);
+  const [split, setSplit] = useState(30);
+
+  const [dragging, setDragging] = useState(false);
+  const [width, setWidth] = useState(500); // Initial width of the resizable component
+
+  const handleMouseDown = (e) => {
+    setDragging(true);
+  };
+
+  const handleMouseUp = (e) => {
+    setDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (dragging) {
+      const containerWidth = document.getElementById("container").offsetWidth;
+      const mouseX = e.pageX;
+      const newWidth = Math.max(200, Math.min(containerWidth - 200, mouseX));
+      setWidth(newWidth);
+    }
+  };
 
   // highlight certain words
   const parts = description.split(/:(\w+)/);
@@ -30,6 +51,8 @@ function Editor({ code, description, language, onChange, test, answer }) {
     }
     return part;
   });
+
+  const handleSizeChange = () => {};
 
   const editorOptions = {
     selectOnLineNumbers: true,
@@ -67,49 +90,58 @@ function Editor({ code, description, language, onChange, test, answer }) {
       console.error(error);
     }
   };
-
-  const ELEMENT_MAP = {
-    a: (
-      <div className="tracking-wide bg-black text-white  border border-neutral-50/20 text-md flex flex-col">
-        <DescriptionNav currentTab={currentTab} setCurrentTab={setCurrentTab}/>
-        {currentTab === 0 ? (
-          <h1 className="p-6 bg-black h-full tracking-widest">{styledParts}</h1>
-        ) : (
-          <CodeBlock answer={answer} />
-        )}
-      </div>
-    ),
-    b: (
-      <CodeEditor
-        defaultLanguage="javascript"
-        theme="vs-dark"
-        defaultValue={`${code}`}
-        options={editorOptions}
-        value={userCode}
-        onChange={handleEditorChange}
-      />
-    ),
-    c: (
-      <EditorOutput correct={correct} output={output} runCode={runCode} test={test}/>
-    ),
-  };
-
   return (
-    <Mosaic
-      className="bg-black text-black"
-      renderTile={(id) => ELEMENT_MAP[id]}
-      initialValue={{
-        direction: "column",
-        first: {
-          direction: "row",
-          first: "a",
-          second: "b",
-          splitPercentage: 30,
-        },
-        second: "c",
-        splitPercentage: 90,
-      }}
-    />
+    <div className="flex flex-col w-screen h-5/6">
+      <Resizable
+        width={width}
+        height={Infinity}
+        onResizeStop={(event, data) => setWidth(data.size.width)} // Update the width when resizing stops
+        minConstraints={[400, Infinity]} // Minimum width of the resizable component
+        maxConstraints={[800, Infinity]} // Maximum width of the resizable component
+      >
+        <div
+          className="flex flex-row h-5/6 "
+          id="container"
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
+          <div
+            className="tracking-wide bg-black text-white border border-neutral-50/20 text-md flex flex-col border-r"
+            style={{ width: `${width}px` }}
+            onMouseDown={handleMouseDown}
+          >
+            <DescriptionNav
+              currentTab={currentTab}
+              setCurrentTab={setCurrentTab}
+            />
+            {currentTab === 0 ? (
+              <h1 className="p-6 bg-black h-full tracking-widest">
+                {styledParts}
+              </h1>
+            ) : (
+              <CodeBlock answer={answer} />
+            )}
+          </div>
+          <div style={{ width: `calc(100% - ${width}px)` }}>
+            <CodeEditor
+              defaultLanguage="javascript"
+              theme="vs-dark"
+              defaultValue={`${code}`}
+              options={editorOptions}
+              value={userCode}
+              onChange={handleEditorChange}
+            />
+          </div>
+        </div>
+      </Resizable>
+
+      <EditorOutput
+        correct={correct}
+        output={output}
+        runCode={runCode}
+        test={test}
+      />
+    </div>
   );
 }
 
