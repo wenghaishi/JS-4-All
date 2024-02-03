@@ -20,7 +20,7 @@ function Editor({ code, description, language, onChange, test, answer }) {
   const [split, setSplit] = useState(30);
 
   const [dragging, setDragging] = useState(false);
-  const [width, setWidth] = useState(500); // Initial width of the resizable component
+  const [width, setWidth] = useState(400); // Initial width of the resizable component
 
   const handleMouseDown = (e) => {
     setDragging(true);
@@ -31,11 +31,9 @@ function Editor({ code, description, language, onChange, test, answer }) {
   };
 
   const handleMouseMove = (e) => {
-    if (dragging) {
-      const containerWidth = document.getElementById("container").offsetWidth;
-      const mouseX = e.pageX;
-      const newWidth = Math.max(200, Math.min(containerWidth - 200, mouseX));
-      setWidth(newWidth);
+    if (dragging == true) {
+      const mousePostionX = e.pageX;
+      setWidth(mousePostionX);
     }
   };
 
@@ -51,8 +49,6 @@ function Editor({ code, description, language, onChange, test, answer }) {
     }
     return part;
   });
-
-  const handleSizeChange = () => {};
 
   const editorOptions = {
     selectOnLineNumbers: true,
@@ -91,49 +87,43 @@ function Editor({ code, description, language, onChange, test, answer }) {
     }
   };
   return (
-    <div className="flex flex-col w-screen h-5/6">
-      <Resizable
-        width={width}
-        height={Infinity}
-        onResizeStop={(event, data) => setWidth(data.size.width)} // Update the width when resizing stops
-        minConstraints={[400, Infinity]} // Minimum width of the resizable component
-        maxConstraints={[800, Infinity]} // Maximum width of the resizable component
-      >
+    <div
+      className="flex flex-col w-screen h-5/6 ml-2 mr-2"
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+    >
+      <div className="flex flex-row h-5/6 " id="container">
         <div
-          className="flex flex-row h-5/6 "
-          id="container"
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
+          className="tracking-wide bg-black text-white border resizable-div border-neutral-50/20 text-md flex flex-col border-r"
+          style={{ width: `${width}px` }}
         >
-          <div
-            className="tracking-wide bg-black text-white border border-neutral-50/20 text-md flex flex-col border-r"
-            style={{ width: `${width}px` }}
-            onMouseDown={handleMouseDown}
-          >
-            <DescriptionNav
-              currentTab={currentTab}
-              setCurrentTab={setCurrentTab}
-            />
-            {currentTab === 0 ? (
-              <h1 className="p-6 bg-black h-full tracking-widest">
-                {styledParts}
-              </h1>
-            ) : (
-              <CodeBlock answer={answer} />
-            )}
-          </div>
-          <div style={{ width: `calc(100% - ${width}px)` }}>
-            <CodeEditor
-              defaultLanguage="javascript"
-              theme="vs-dark"
-              defaultValue={`${code}`}
-              options={editorOptions}
-              value={userCode}
-              onChange={handleEditorChange}
-            />
-          </div>
+          <DescriptionNav
+            currentTab={currentTab}
+            setCurrentTab={setCurrentTab}
+          />
+          {currentTab === 0 ? (
+            <h1 className="p-6 bg-black h-full tracking-widest">
+              {styledParts}
+            </h1>
+          ) : (
+            <CodeBlock answer={answer} />
+          )}
         </div>
-      </Resizable>
+        <div
+          className="w-2 hover:bg-blue-700 cursor-col-resize"
+          onMouseDown={handleMouseDown}
+        ></div>
+        <div style={{ width: `calc(100% - ${width}px)` }}>
+          <CodeEditor
+            defaultLanguage="javascript"
+            theme="vs-dark"
+            defaultValue={`${code}`}
+            options={editorOptions}
+            value={userCode}
+            onChange={handleEditorChange}
+          />
+        </div>
+      </div>
 
       <EditorOutput
         correct={correct}
