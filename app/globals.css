@@ -3,31 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --foreground-rgb: 28, 25, 23;
+  --background-start-rgb: 248, 250, 252;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+      180deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(248, 250, 252, 0.92) 38%,
+      rgb(var(--background-end-rgb)) 100%
     )
     rgb(var(--background-start-rgb));
 }
 
+.landing-shell {
+  background:
+    radial-gradient(circle at top left, rgba(251, 113, 133, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.18), transparent 32%),
+    linear-gradient(180deg, #f8fafc 0%, #f5f3ff 45%, #fffaf5 100%);
+}
+
+.landing-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 85%);
+}
+
+.landing-glow {
+  animation: floatGlow 12s ease-in-out infinite;
+}
+
+.landing-glow-left {
+  background: rgba(251, 113, 133, 0.22);
+}
+
+.landing-glow-right {
+  background: rgba(99, 102, 241, 0.24);
+  animation-delay: -4s;
+}
+
+.landing-card {
+  position: relative;
+}
+
+.landing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
 .feature-card1 {
-  transition: background-color ease-in-out 300ms
+  transition: background-color ease-in-out 300ms;
+}
+
+.feature-card1 {
+  transition: background-color ease-in-out 300ms;
 }
 
 .feature-card1:hover {
@@ -35,7 +84,7 @@ body {
 }
 
 .feature-card2 {
-  transition: background-color ease-in-out 300ms
+  transition: background-color ease-in-out 300ms;
 }
 
 .feature-card2:hover {
@@ -43,7 +92,7 @@ body {
 }
 
 .feature-card3 {
-  transition: background-color ease-in-out 300ms
+  transition: background-color ease-in-out 300ms;
 }
 
 .feature-card3:hover {
@@ -51,7 +100,7 @@ body {
 }
 
 .feature-card4 {
-  transition: background-color ease-in-out 300ms
+  transition: background-color ease-in-out 300ms;
 }
 
 .feature-card4:hover {
@@ -81,18 +130,17 @@ body {
   align-items: center;
 }
 
-
 .line {
-  width: 100%; 
-  text-align: center; 
-  border-bottom: 1px solid #464545; 
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #464545;
   line-height: 0.1em;
-  margin: 10px 0 20px; 
-} 
+  margin: 10px 0 20px;
+}
 
-.line-text { 
-   background:black; 
-   padding:0 10px; 
+.line-text {
+  background: black;
+  padding: 0 10px;
 }
 
 .mosaic-split-line {
@@ -118,4 +166,12 @@ body {
   }
 }
 
-
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 20px, 0) scale(1.04);
+  }
+}
